@@ -1,0 +1,27 @@
+{% for item in data.scrollContentsList %}
+<div class="scroll-contents scroll-contents--{{ item.index }}">
+  <div class="scroll-contents__content">
+    <div class="scroll-contents__item">
+      <div class="scroll-contents__txt">
+        <p class="scroll-contents__sub">{{ item.sub }}</p>
+        <h2 class="scroll-contents__title">{{ item.title }}</h2>
+        {% if icon %}
+        <video class="icon" autoplay loop muted playsinline preload="auto">
+          <source src="{{icon}}" type="video/mp4" />
+        </video>
+        {% endif %}
+        <p class="scroll-contents__description">{{ item.description }}</p>
+      </div>
+      <div class="scroll-contents__bg">
+        {% if item.imagePath != "" %} {% assign imagePath = item.imagePath %}
+        <img
+          src="{{ imagePath |  prepend: '../../assets/images/technology/' | append: '.jpg' | relative }}"
+          alt=""
+          class="scroll-contents__image"
+        />
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}

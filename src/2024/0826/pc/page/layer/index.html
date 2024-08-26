@@ -1,0 +1,73 @@
+---
+layout: "default"
+css:
+  - "../../assets/styles/common.scss"
+  - "../../assets/styles/layer.scss"
+js:
+  - "../../assets/js/common.js"
+  - "../../assets/js/layer.js"
+---
+
+{% include '../../_includes/partials/header/index.html' %}
+
+<main class="container page-main">
+  <button type="button" data-show-layer="comparisonLayer">상품 비교하기</button>
+  <button type="button" data-show-layer="cartLayer">장바구니</button>
+</main>
+
+{% include '../../_includes/partials/footer/index.html' %}
+
+<div id="top-layer">
+  <div class="layer layer--modal comparison-layer" id="comparisonLayer">
+    <!-- .layer--modal::before() as backdrop -->
+    <div class="layer__box">
+      <div class="layer__header">
+        <h2 class="layer__title">상품 비교하기</h2>
+        <button
+          type="button"
+          class="layer__close-button"
+          data-close
+          aria-label="상품 비교하기 닫기"
+        >
+          <svg viewBox="0 0 22 22">
+            <path d="M21 1 1 21M1 1l20 20" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="layer__body">
+        <img
+          src="./images/comparison-layer-body.png"
+          alt=""
+          width="840"
+          height="941"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="layer layer--modal cart-layer" id="cartLayer">
+    <div class="layer__box">
+      <div class="layer__header">
+        <button
+          type="button"
+          class="layer__close-button"
+          data-close
+          aria-label="장바구니 닫기"
+        >
+          <svg viewBox="0 0 22 22">
+            <path d="M21 1 1 21M1 1l20 20" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="layer__body">
+        <img
+          src="./images/cart-layer-body.png"
+          alt=""
+          width="569"
+          height="1020"
+        />
+      </div>
+    </div>
+  </div>
+</div>

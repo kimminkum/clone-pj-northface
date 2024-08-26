@@ -1,0 +1,131 @@
+@use "util" as * with (
+  $min-width: 1380,
+  $max-width: 1920
+);
+@use "fonts/pretendard";
+@use "fonts/redhat";
+@use "styles/aos";
+@use "_swiper";
+
+/* Variables */
+:root {
+  --gutter: min(120px, 7.143vw);
+  --font-weight-default: 400;
+  --font-color: #000;
+  --font-lineHeight: 1.2;
+  --section-max-width: 1920px;
+  --section-margin-top: 0;
+  --section-inner-max-width: 1280px;
+}
+
+/* Base Styles */
+body {
+  min-width: var(--section-inner-max-width);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  font-family: "Red Hat Display", "Pretendard", sans-serif;
+  font-weight: var(--font-weight-default);
+  color: var(--font-color);
+  line-height: var(--font-lineHeight);
+}
+
+/* Reset Styles */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+}
+
+video {
+  height: auto;
+  vertical-align: top;
+  border: 0;
+  outline: 0;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+/* Layout Styles */
+.section {
+  position: relative;
+  width: 100%;
+  max-width: var(--section-max-width);
+  margin-inline: auto;
+
+  &--full-width {
+    max-width: 100%;
+  }
+
+  &__inner {
+    max-width: var(--section-inner-max-width);
+    padding: 0 var(--gutter);
+    margin-inline: auto;
+  }
+
+  & + & {
+    margin-top: var(--section-margin-top);
+  }
+}
+
+/* Utility Classes */
+.ff-ko {
+  font-family: "Pretendard";
+}
+
+.ff-en {
+  font-family: "Red Hat Display";
+}
+
+.a11y-hidden {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  clip-path: circle(0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* Partials */
+@import "../../_includes/partials/header/index";
+@import "../../_includes/partials/footer/index";

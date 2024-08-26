@@ -1,0 +1,18 @@
+<div class="sticky-tab" id="stickyTab01">
+  <div class="sticky-tab-position">
+    <div class="sticky-tab__container">
+      <ul class="sticky-tab__list">
+        {% for navi in data.stickyTab %}
+        <li class="">
+          <a
+            href="#{{navi.id}}"
+            data-target="{{navi.target}}"
+            class="sticky-tab__link"
+            ><span>{{navi.title}}</span></a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

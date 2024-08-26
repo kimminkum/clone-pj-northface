@@ -1,0 +1,43 @@
+@use "util" as *;
+
+// sticky
+.sticky-bar {
+  --sticky-bg-color: #eaeaea;
+  --sticky-z-index: 90;
+  --sticky-top: var(
+    --header-height,
+    0
+  ); // header가 있을 경우 header height 기입
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: var(--sticky-z-index, 10);
+
+  &.is-hidden .sticky-bar__inner {
+    opacity: 0;
+  }
+
+  &.is-fixed .sticky-bar__inner {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    transition: margin-top 0.25s linear;
+  }
+}
+
+.sticky-bar__inner {
+  max-width: var(--section-max-width);
+  width: 100%;
+  opacity: 1;
+  margin-top: var(--sticky-top, 0);
+  background-color: var(--sticky-bg-color);
+}
+
+.layout-header:not(.is-scrolled)
+  ~ .container
+  .sticky-bar.is-fixed
+  .sticky-bar__inner {
+  --sticky-top: var(--header-height, 65px);
+}

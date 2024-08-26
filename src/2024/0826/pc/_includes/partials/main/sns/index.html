@@ -1,0 +1,22 @@
+<section class="section section--sns">
+  {% include "../../../../_includes/components/main-title/index.html"
+  title01:"함께 즐기는 노스페이스" %}
+  <div class="section__body">
+    <div
+      class="sns swiper"
+      data-aos="fade-left"
+      data-aos-delay="400"
+      data-aos-duration="1000"
+    >
+      <div class="swiper-wrapper">
+        {% for i in (1..13) %}
+        <div class="swiper-slide">
+          <div class="nofe-image">
+            <img src="./assets/images/main/sns_item{{i}}.jpg" alt="" />
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

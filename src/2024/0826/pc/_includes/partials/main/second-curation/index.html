@@ -1,0 +1,44 @@
+<section
+  class="section section--full-width section--has-bg section--second-curation"
+>
+  <div class="inner">
+    {% include "../../../../_includes/components/main-title/index.html"
+    title01:"다른 고객님들이", title02:"많이 찾는 상품 ", desc:'<span
+      class="text-underline"
+      >더보기</span
+    >' %}
+    <div class="section__body">
+      <ul
+        class="second-curation"
+        data-aos="fade-left"
+        data-aos-delay="400"
+        data-aos-duration="1000"
+      >
+        {% for i in (1..5) %}
+        <li>
+          <div class="nofe-image">
+            <img
+              src="./assets/images/main/second_curation_item_{{i}}.png"
+              alt=""
+            />
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee__item">
+      <img src="./assets/images/main/marquee.png" alt="" />
+    </div>
+    <div class="marquee__item">
+      <img src="./assets/images/main/marquee.png" alt="" />
+    </div>
+  </div>
+  <!-- <p class="second-curation__text">
+    <span
+      >Never Stop Exploring THE NORTH FACE Never Stop Exploring THE NORTH FACE
+      Never Stop Exploring THE NORTH FACE</span
+    >
+  </p> -->
+</section>

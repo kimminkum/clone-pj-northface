@@ -1,0 +1,148 @@
+---
+layout: "default"
+css:
+  - "../../assets/styles/common.scss"
+  - "./style.scss"
+js:
+  - "../../assets/js/common.js"
+  - "./script.js"
+---
+
+{% assign indexsrc = "../../" %} {% assign page_type = "pdp" %} {% include
+'../../_includes/partials/header/index.html' %}
+
+<main class="container page-subpage page-subpage--pdp">
+  <div class="floating-quick">
+    <button type="button" class="quick-btn">구매하기</button>
+    <div class="quick-layer">
+      <div class="quick-layer--inner">
+        <button type="button" class="close-btn">
+          <span class="a11y-hidden">close</span>
+        </button>
+        <img src="../../assets/images/pdp/quick_layer.png" alt="" />
+      </div>
+    </div>
+  </div>
+  {% include '../../_includes/partials/pdp/pdp-top/index.html'%} {% include
+  "../../_includes/components/stickyTab/index.html" navi: data.stikcyTab %}
+  <section class="section section--full-width section--prd-info" id="prdInfo">
+    <img
+      src="../../assets/images/pdp/prd_info_section.jpg"
+      alt=""
+      class="full-image"
+    />
+  </section>
+
+  <section class="section section--full-width section--size" id="sizeTab">
+    {% include '../../_includes/partials/pdp/pdp-size/index.html'%}
+  </section>
+
+  <section class="section section--full-width section--review" id="review">
+    <img
+      src="../../assets/images/pdp/review_section.jpg"
+      alt=""
+      class="full-image"
+    />
+  </section>
+
+  <section
+    class="section section--full-width section--recommend"
+    id="recommended"
+  >
+    <img
+      src="../../assets/images/pdp/recommend_section.jpg"
+      alt=""
+      class="full-image"
+    />
+  </section>
+
+  <div id="top-layer">
+    <!-- codi layer popup -->
+    <div class="layer layer--modal" id="codi">
+      <div class="layer__box">
+        <div class="layer__header">
+          <h2 class="layer__title">
+            <span class="a11y-hidden">코디추천</span>
+          </h2>
+          <button
+            type="button"
+            class="layer__close-button codi-close"
+            data-close
+            aria-label="[레이어 타이틀] 닫기"
+          ></button>
+        </div>
+        <div class="layer__body">
+          <img src="../../assets/images/pdp/codi_layer.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- codi layer popup -->
+
+    <!-- size layer popup -->
+    <div class="layer layer--modal" id="size">
+      <div class="layer__box">
+        <div class="layer__header">
+          <!-- 타이틀 없어도 헤더 구조 유지해주세요 -->
+          <h2 class="layer__title">
+            <span class="a11y-hidden">코디추천</span>
+          </h2>
+          <button
+            type="button"
+            class="layer__close-button size-close"
+            data-close
+            aria-label="[레이어 타이틀] 닫기"
+          ></button>
+        </div>
+        <div class="layer__body">
+          <div class="size-body">
+            <ul class="size-tab">
+              <li class="size-tab__item selected">
+                <a href="#sizeA" class="size-tab__link"> 사이즈 피드백 </a>
+              </li>
+              <li class="size-tab__item">
+                <a href="#sizeB" class="size-tab__link"> 사이즈 비교하기 </a>
+              </li>
+            </ul>
+            <div class="size-contents">
+              <div class="size-contents--layer selected" id="sizeA">
+                <img
+                  src="../../assets/images/pdp/size_popup_contents_01.png"
+                  alt=""
+                />
+              </div>
+              <div class="size-contents--layer" id="sizeB">
+                <button type="button" class="select-btn select-btn__01">
+                  <span class="a11y-hidden">선택</span>
+                </button>
+                <button type="button" class="select-btn select-btn__02">
+                  <span class="a11y-hidden">선택</span>
+                </button>
+                <button type="button" class="select-btn select-btn__03">
+                  <span class="a11y-hidden">선택</span>
+                </button>
+                <img
+                  src="../../assets/images/pdp/size_popup_contents_02.png"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="option-layer">
+              <button type="button" class="other-prd">
+                <span class="a11y-hidden">다른 상품 선택</span>
+              </button>
+              <img
+                src="../../assets/images/pdp/size_popup_contents_03.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <img src="../../assets/images/pdp/size_popup.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- size layer popup -->
+  </div>
+</main>
+
+{% include '../../_includes/partials/footer/index.html' %}

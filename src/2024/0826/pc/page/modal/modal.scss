@@ -1,0 +1,49 @@
+:where(dialog) {
+  display: none;
+  border: none;
+  margin: auto;
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+dialog[open] {
+  display: block;
+}
+
+.modal__box {
+  position: relative;
+  min-width: 90px;
+  min-height: 90px;
+  max-width: 100vw;
+  background: white;
+  color: black;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+  }
+
+  path {
+    fill: none;
+    stroke: currentColor;
+  }
+}
+
+.modal__title {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1;
+  font-family: Pretendard, sans-serif;
+  letter-spacing: -0.02em;
+}

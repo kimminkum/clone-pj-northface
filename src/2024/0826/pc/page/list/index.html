@@ -1,0 +1,622 @@
+---
+layout: "default"
+css:
+  - "./list.scss"
+js:
+  - "./list.js"
+---
+
+<div id="appRoot" x-data="list">
+  {% assign indexsrc = "../../" %} {% include
+  '../../_includes/partials/header/index.html' %}
+
+  <main class="container page-main" :class="`mode_${mode}`">
+    <div class="page-header">
+      <div class="breadcrumb">
+        남성
+        <svg class="separator" viewBox="0 0 16 16">
+          <path d="M7 11.5 10.5 8 7 4.5" />
+        </svg>
+        <span class="current-page"
+          >자켓&amp;조끼
+          <svg class="dropdown" viewBox="0 0 16 16">
+            <path d="M4.5 7 8 10.5 11.5 7" />
+          </svg>
+        </span>
+      </div>
+      <h1 class="page-title">자켓&amp;조끼 (353)</h1>
+    </div>
+
+    <div class="control-bar">
+      <div class="content-wrap">
+        <div class="control-bar__lead">
+          <div class="filter-button-group">
+            <div class="filter-button filter-button--all">
+              필터 전체보기
+              <svg class="filter-icon" viewBox="0 0 20 20">
+                <path
+                  fill="#fff"
+                  d="M8.042 7.456H17 8.042Zm0 0c0 .343-.132.671-.366.913a1.23 1.23 0 0 1-.884.379 1.23 1.23 0 0 1-.884-.379 1.314 1.314 0 0 1-.366-.913m2.5 0c0-.343-.132-.671-.366-.914a1.23 1.23 0 0 0-.884-.378c-.332 0-.65.136-.884.378-.235.243-.366.571-.366.914m-2.292 0h2.292H3.25Zm11.458 5.167H17h-2.292Zm0 0c0 .343-.131.672-.366.914a1.23 1.23 0 0 1-.884.378 1.23 1.23 0 0 1-.884-.378 1.314 1.314 0 0 1-.366-.914m2.5 0c0-.342-.131-.67-.366-.913a1.23 1.23 0 0 0-.884-.379c-.331 0-.65.137-.884.379-.234.242-.366.57-.366.913m-8.958 0h8.958H3.25Z"
+                />
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="square"
+                  stroke-linejoin="round"
+                  d="M8.042 7.456H17m-8.958 0c0 .343-.132.671-.366.913a1.23 1.23 0 0 1-.884.379 1.23 1.23 0 0 1-.884-.379 1.314 1.314 0 0 1-.366-.913m2.5 0c0-.343-.132-.671-.366-.914a1.23 1.23 0 0 0-.884-.378c-.332 0-.65.136-.884.378-.235.243-.366.571-.366.914m0 0H3.25m11.458 5.167H17m-2.292 0c0 .343-.131.672-.366.914a1.23 1.23 0 0 1-.884.378 1.23 1.23 0 0 1-.884-.378 1.314 1.314 0 0 1-.366-.914m2.5 0c0-.342-.131-.67-.366-.913a1.23 1.23 0 0 0-.884-.379c-.331 0-.65.137-.884.379-.234.242-.366.57-.366.913m0 0H3.25"
+                />
+              </svg>
+            </div>
+
+            <div class="filter-button">
+              카테고리
+              <svg class="dropdown-icon" viewBox="0 0 20 20">
+                <path d="m6 8 4 4 4-4" />
+              </svg>
+            </div>
+
+            <div class="filter-button">
+              사이즈
+              <svg class="dropdown-icon" viewBox="0 0 20 20">
+                <path d="m6 8 4 4 4-4" />
+              </svg>
+            </div>
+
+            <div class="filter-button">
+              색상
+              <svg class="dropdown-icon" viewBox="0 0 20 20">
+                <path d="m6 8 4 4 4-4" />
+              </svg>
+            </div>
+
+            <div class="filter-button">
+              가격
+              <svg class="dropdown-icon" viewBox="0 0 20 20">
+                <path d="m6 8 4 4 4-4" />
+              </svg>
+            </div>
+
+            <div class="filter-button">
+              성별
+              <svg class="dropdown-icon" viewBox="0 0 20 20">
+                <path d="m6 8 4 4 4-4" />
+              </svg>
+            </div>
+
+            <div class="filter-button">
+              용도
+              <svg class="dropdown-icon" viewBox="0 0 20 20">
+                <path d="m6 8 4 4 4-4" />
+              </svg>
+            </div>
+
+            <div class="filter-button">
+              핏
+              <svg class="dropdown-icon" viewBox="0 0 20 20">
+                <path d="m6 8 4 4 4-4" />
+              </svg>
+            </div>
+
+            <div class="filter-reset">
+              초기화
+              <svg fill="none" viewBox="0 0 14 14">
+                <path
+                  stroke="#000"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12.6 7.84c-.408 2.694-2.745 4.76-5.568 4.76C3.922 12.6 1.4 10.092 1.4 7c0-3.093 2.521-5.6 5.632-5.6a5.634 5.634 0 0 1 5.163 3.36"
+                />
+                <path
+                  stroke="#000"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.8 5.133h2.464a.336.336 0 0 0 .336-.336V2.333"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="control-bar__trail">
+          <div class="control-group">
+            <div class="control-group__item">
+              품절상품 제외
+              <svg class="checkbox" viewBox="0 0 18 18">
+                <path stroke="#999" d="M.5.5h17v17H.5z" />
+                <path
+                  stroke="silver"
+                  stroke-linecap="square"
+                  stroke-linejoin="round"
+                  d="m4.833 9.417 2.5 2.5 5.834-5.833"
+                />
+              </svg>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="control-group__item">
+              신상품순
+              <svg class="dropdown-icon" viewBox="0 0 20 20">
+                <path d="m6 8 4 4 4-4" />
+              </svg>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="control-group__item">
+              <button
+                type="button"
+                aria-label="갤러리뷰"
+                class="list-view-button"
+                :aria-pressed="type === 'gallery'"
+                :disabled="mode === 'compare'"
+                @click="type = 'gallery'"
+              >
+                <svg viewBox="0 0 32 32">
+                  <path
+                    d="M27 26.214V15.673a.786.786 0 0 0-.786-.786H18.62a.786.786 0 0 0-.786.786v10.541a.786.786 0 0 0 .786.786h7.595a.786.786 0 0 0 .786-.786Zm-12.833-9.887V5.786A.786.786 0 0 0 13.38 5H5.786A.786.786 0 0 0 5 5.786v10.541a.786.786 0 0 0 .786.786h7.595a.786.786 0 0 0 .786-.786ZM27 10.434V5.787A.786.786 0 0 0 26.214 5H18.62a.786.786 0 0 0-.786.786v4.649a.785.785 0 0 0 .786.785h7.595a.786.786 0 0 0 .786-.786ZM14.167 21.566v4.648a.786.786 0 0 1-.786.786H5.786A.786.786 0 0 1 5 26.214v-4.648a.786.786 0 0 1 .786-.786h7.595a.785.785 0 0 1 .786.785Z"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                aria-label="그리드뷰"
+                class="list-view-button"
+                :aria-pressed="type === 'grid' && grid === 4"
+                :disabled="mode === 'compare'"
+                @click="type = 'grid'; grid = 4"
+              >
+                <svg viewBox="0 0 32 32">
+                  <path
+                    d="M17.867 26.4v-7.733a.8.8 0 0 1 .8-.8H26.4a.8.8 0 0 1 .8.8V26.4a.8.8 0 0 1-.8.8h-7.733a.8.8 0 0 1-.8-.8ZM4.8 26.4v-7.733a.8.8 0 0 1 .8-.8h7.733a.8.8 0 0 1 .8.8V26.4a.8.8 0 0 1-.8.8H5.6a.8.8 0 0 1-.8-.8Zm13.067-13.067V5.6a.8.8 0 0 1 .8-.8H26.4a.8.8 0 0 1 .8.8v7.733a.8.8 0 0 1-.8.8h-7.733a.8.8 0 0 1-.8-.8Zm-13.067 0V5.6a.8.8 0 0 1 .8-.8h7.733a.8.8 0 0 1 .8.8v7.733a.8.8 0 0 1-.8.8H5.6a.8.8 0 0 1-.8-.8Z"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                aria-label="작은 그리드뷰"
+                class="list-view-button"
+                disabled
+              >
+                <svg viewBox="0 0 32 32">
+                  <path
+                    stroke-linejoin="round"
+                    d="M5 5h5.789v5.787h-5.79zM13.105 5h5.789v5.787h-5.79zM21.21 5H27v5.787h-5.79zM5 13.099h5.789v5.787h-5.79zM13.105 13.099h5.789v5.787h-5.79zM21.21 13.099H27v5.787h-5.79zM5 21.213h5.789V27h-5.79zM13.105 21.213h5.789V27h-5.79zM21.21 21.213H27V27h-5.79z"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div class="separator"></div>
+
+            <template x-if="mode === 'compare'">
+              <button
+                type="button"
+                class="compare-button compare-button--active"
+                @click="onCompareButtonClick"
+              >
+                <span
+                  x-text="itemsToCompare.size > 1 ? `${itemsToCompare.size}개 비교하기` : '상품 선택하기'"
+                ></span>
+              </button>
+            </template>
+            <template x-if="mode === 'view'">
+              <button
+                type="button"
+                class="compare-button"
+                @click="onCompareButtonClick"
+              >
+                상품 비교하기
+                <svg viewBox="0 0 20 20">
+                  <path d="M5 10h10M10 5v10" />
+                </svg>
+              </button>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-wrap product-list-wrap">
+      <ul
+        class="product-list"
+        :class="type === 'gallery' ? 'product-list--gallery' : `product-list_grid_${grid}`"
+      >
+        <template
+          x-for="(item, index) in (type === 'gallery' ? listItems : productItems)"
+          :key="item.id"
+        >
+          <li
+            class="product-list__item"
+            :class="[item.colSpan ? `col-span_${item.colSpan}` : '', item.rowSpan ? `row-span_${item.rowSpan}` : '']"
+          >
+            <template x-if="item.isBanner">
+              <div class="banner">
+                <template x-if="item.image">
+                  <img
+                    :src="item.image.src"
+                    alt=""
+                    :width="item.image.width"
+                    :height="item.image.height"
+                  />
+                </template>
+                <template x-if="item.video">
+                  <a href="../pdp/">
+                    <video
+                      :src="item.video.src"
+                      :width="item.video.width"
+                      :height="item.video.height"
+                      muted
+                      autoplay
+                      loop
+                      playsinline
+                    ></video>
+                  </a>
+                </template>
+              </div>
+            </template>
+            <template x-if="!item.isBanner">
+              <div
+                class="product-card"
+                :id="item.id"
+                @click="mode === 'compare' && toggleCompare(item.id)"
+              >
+                <div class="product-card__visual">
+                  <template x-if="item.label">
+                    <div class="product-card__label" x-text="item.label"></div>
+                  </template>
+                  <template x-if="Array.isArray(item.thumbnails)">
+                    <div class="swiper" x-init="initSwiper($el)">
+                      <div class="swiper-wrapper">
+                        <template
+                          x-for="(thumbnail, index) in item.thumbnails"
+                          :key="index"
+                        >
+                          <div class="swiper-slide">
+                            <img
+                              :src="thumbnail"
+                              alt=""
+                              class="product-card__image"
+                              width="462"
+                              height="462"
+                            />
+                          </div>
+                        </template>
+                      </div>
+                      <div class="swiper-button-prev">
+                        <svg viewBox="0 0 24 24">
+                          <path d="m16 19-8-7 8-7" />
+                        </svg>
+                      </div>
+                      <div class="swiper-button-next">
+                        <svg viewBox="0 0 24 24">
+                          <path d="m8 19 8-7-8-7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </template>
+                  <template
+                    x-if="typeof item.thumbnail === 'string' && !Array.isArray(item.thumbnails)"
+                  >
+                    <div class="fake-swiper">
+                      <a
+                        :href="item.href || '#'"
+                        @click="!item.href ? $event.preventDefault() : null"
+                      >
+                        <img
+                          :src="item.thumbnail"
+                          alt=""
+                          class="product-card__image"
+                          width="462"
+                          height="462"
+                        />
+                      </a>
+                      <div class="swiper-button-prev">
+                        <svg viewBox="0 0 24 24">
+                          <path d="m16 19-8-7 8-7" />
+                        </svg>
+                      </div>
+                      <div class="swiper-button-next">
+                        <svg viewBox="0 0 24 24">
+                          <path d="m8 19 8-7-8-7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </template>
+                  <button
+                    x-show="mode === 'view'"
+                    type="button"
+                    aria-label="좋아요"
+                    :aria-pressed="item.hearted"
+                    class="product-card__action-button product-card__action"
+                    @click="item.hearted = !item.hearted"
+                  >
+                    <svg class="heart-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M20.458 5.591a5.255 5.255 0 0 0-1.708-1.177 5.122 5.122 0 0 0-4.028 0 5.255 5.255 0 0 0-1.708 1.177L12 6.638 10.986 5.59a5.182 5.182 0 0 0-3.722-1.59 5.183 5.183 0 0 0-3.722 1.59A5.52 5.52 0 0 0 2 9.431a5.52 5.52 0 0 0 1.542 3.841l1.014 1.047L12 22l7.444-7.681 1.014-1.047a5.446 5.446 0 0 0 1.141-1.761 5.581 5.581 0 0 0 0-4.158 5.445 5.445 0 0 0-1.141-1.762Z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    x-show="mode === 'compare'"
+                    type="button"
+                    aria-label="비교하기"
+                    :aria-pressed="item.checked"
+                    class="product-card__action-button product-card_action_compare product-card__action"
+                  >
+                    <svg class="check-icon" viewBox="0 0 44 44">
+                      <rect class="check-icon__ring" x=".5" y=".5" rx="21.5" />
+                      <path
+                        class="check-icon__check"
+                        d="m13.196 22.726 5.5 5.5L31.53 15.393"
+                      />
+                    </svg>
+                  </button>
+                  <div class="product-card__quickview">
+                    <div
+                      class="quickview__sheet"
+                      x-data="{color: 'beige', size: ''}"
+                    >
+                      <svg
+                        class="sheet__x"
+                        viewBox="0 0 24 24"
+                        @click="closeQuickview(item.id)"
+                      >
+                        <path d="M20 4 4 20M4 4l16 16" />
+                      </svg>
+                      <div class="quickview__body">
+                        <div
+                          class="quickview__option-set option-type_thumbnail"
+                        >
+                          <div class="option-label">색상</div>
+                          <div class="options">
+                            <button
+                              type="button"
+                              class="option-button"
+                              :aria-pressed="color === 'beige'"
+                              @click="color = 'beige'"
+                            >
+                              <img
+                                src="./images/thumbnail_01_01.jpg"
+                                alt=""
+                                width="78"
+                                height="78"
+                              />
+                            </button>
+                            <button
+                              type="button"
+                              class="option-button"
+                              :aria-pressed="color === 'black'"
+                              @click="color = 'black'"
+                            >
+                              <img
+                                src="./images/thumbnail_03.jpg"
+                                alt=""
+                                width="78"
+                                height="78"
+                              />
+                            </button>
+                            <button
+                              type="button"
+                              class="option-button"
+                              :aria-pressed="color === 'grey'"
+                              @click="color = 'grey'"
+                            >
+                              <img
+                                src="./images/thumbnail_30.jpg"
+                                alt=""
+                                width="78"
+                                height="78"
+                              />
+                            </button>
+                          </div>
+                        </div>
+                        <div class="quickview__option-set">
+                          <div class="option-label">사이즈</div>
+                          <div class="options">
+                            <button
+                              type="button"
+                              class="option-button"
+                              :aria-pressed="size === '90'"
+                              @click="size = '90'"
+                            >
+                              90 (S)
+                            </button>
+                            <button
+                              type="button"
+                              class="option-button"
+                              :aria-pressed="size === '95'"
+                              @click="size = '95'"
+                            >
+                              95 (M)
+                            </button>
+                            <button
+                              type="button"
+                              class="option-button"
+                              :aria-pressed="size === '100'"
+                              @click="size = '100'"
+                            >
+                              100 (L)
+                            </button>
+                            <button
+                              type="button"
+                              class="option-button"
+                              :aria-pressed="size === '105'"
+                              @click="size = '105'"
+                            >
+                              105 (XL)
+                            </button>
+                          </div>
+                        </div>
+                        <div class="quickview__action">
+                          <button
+                            type="button"
+                            class="quickview__cart-button"
+                            :disabled="!(color && size)"
+                            @click="showCart"
+                          >
+                            장바구니 담기
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card__info">
+                  <a
+                    :href="item.href || '#'"
+                    class="product-card__main"
+                    @click="!item.href ? $event.preventDefault() : null"
+                  >
+                    <div class="product-card__title" x-text="item.title"></div>
+                    <div class="product-card__price">
+                      <template x-if="item.discount">
+                        <strong
+                          class="discount"
+                          x-text="item.discount"
+                        ></strong>
+                      </template>
+                      <strong
+                        class="current-price"
+                        x-text="item.price"
+                      ></strong>
+                      <template x-if="item.originalPrice">
+                        <del
+                          class="original-price"
+                          x-text="item.originalPrice"
+                        ></del>
+                      </template>
+                    </div>
+                  </a>
+                  <div class="product-card__meta">
+                    <div class="product-card__reviews" x-show="item.rating">
+                      <svg class="star-icon" viewBox="0 0 16 16">
+                        <path
+                          d="m8 3 1.545 3.291L13 6.822l-2.5 2.56.59 3.618L8 11.291 4.91 13l.59-3.617L3 6.823l3.455-.532L8 3Z"
+                        />
+                      </svg>
+                      <span x-text="item.rating"></span>
+                      <span class="review-count" x-show="item.reviews"
+                        >(<span x-text="item.reviews"></span>)</span
+                      >
+                    </div>
+                    <div
+                      class="product-card__reviews"
+                      x-show="!item.rating"
+                    ></div>
+                    <div
+                      class="product-card__tags"
+                      x-show="item.tags && Array.isArray(item.tags)"
+                    >
+                      <template x-for="tag in item.tags">
+                        <span class="tag" x-text="tag"></span>
+                      </template>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="product-card__cart-button"
+                    aria-label="장바구니 퀵뷰"
+                    :disabled="item.id !== 'product_01'"
+                    @click="openQuickview(item.id)"
+                  >
+                    <svg class="cart-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M3.938 6.055h15.561v9.142c0 2.75-2.229 4.979-4.978 4.979H3.938V6.055Z"
+                      />
+                      <path
+                        d="M8.339 5.56v.5h6.76v-.5a3.38 3.38 0 0 0-6.76 0Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </template>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </main>
+
+  {% include '../../_includes/partials/footer/index.html' %}
+
+  <div id="top-layer">
+    <div
+      class="layer layer--modal comparison-layer"
+      id="comparisonLayer"
+      @layerclose="resetComparison"
+    >
+      <div class="layer__box">
+        <div class="layer__header">
+          <h2 class="layer__title">상품 비교하기</h2>
+          <button
+            type="button"
+            class="layer__close-button"
+            data-close
+            aria-label="상품 비교하기 닫기"
+          >
+            <svg viewBox="0 0 22 22">
+              <path d="M21 1 1 21M1 1l20 20" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="layer__body">
+          <img
+            src="./images/comparison-layer-body.png"
+            alt=""
+            width="840"
+            height="941"
+            usemap="#comparisonLayerBody"
+          />
+          <map name="comparisonLayerBody" id="comparisonLayerBody">
+            <area
+              shape="rect"
+              coords="0,433,248,485"
+              href="#"
+              alt="장바구니 담기"
+              @click.prevent="showCart"
+            />
+            <area
+              shape="rect"
+              coords="296,433,544,485"
+              href="#"
+              alt="장바구니 담기"
+              @click.prevent="showCart"
+            />
+            <area
+              shape="rect"
+              coords="592,433,840,485"
+              href="#"
+              alt="장바구니 담기"
+              @click.prevent="showCart"
+            />
+          </map>
+        </div>
+      </div>
+    </div>
+    <div class="layer layer--modal cart-layer" id="cartLayer">
+      <div class="layer__box">
+        <div class="layer__header">
+          <button
+            type="button"
+            class="layer__close-button"
+            data-close
+            aria-label="장바구니 닫기"
+          >
+            <svg viewBox="0 0 22 22">
+              <path d="M21 1 1 21M1 1l20 20" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="layer__body">
+          <img
+            src="./images/cart-layer-body.png"
+            alt=""
+            width="569"
+            height="1020"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

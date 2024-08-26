@@ -1,0 +1,768 @@
+@use "util" as * with (
+  $min-width: 1380,
+  $max-width: 1920
+);
+@use "swiper" as *;
+
+.page-promotion {
+  max-width: 1920px;
+  margin: 0 auto;
+
+  .promotion-visual {
+    background: url(./images/olympic-visual-bg.jpg) no-repeat 50% 0;
+    height: 1100px;
+    position: relative;
+    overflow: hidden;
+
+    [data-aos="fade-right"] {
+      transform: translate3d(-200px, 0, 0);
+      &.aos-animate {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    [data-aos="fade-left"] {
+      transform: translate3d(200px, 0, 0);
+      &.aos-animate {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .visual-model {
+      width: 1100px;
+      margin: 0 auto;
+    }
+
+    .visual-text {
+      position: relative;
+      &__motion {
+        position: absolute;
+
+        &.motion-pride {
+          left: 380px;
+          bottom: 298px;
+          z-index: 1;
+        }
+
+        &.motion-korea {
+          right: 411px;
+          bottom: 135px;
+        }
+      }
+
+      &__subtitle {
+        position: absolute;
+        width: 100%;
+        bottom: 52px;
+      }
+    }
+
+    //비주얼 빔
+    .visual-beam {
+      position: absolute;
+      z-index: 5;
+
+      &-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 60px;
+        height: 25px;
+        border-radius: 50%;
+        transform-origin: center;
+        // transform: scaleX(9) scaleY(0.3);
+        background: rgb(255, 255, 255);
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 1) 36%,
+          rgba(167, 233, 248, 0.4) 100%
+        );
+        box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.8);
+        animation: lightExpand 1.5s ease-in forwards;
+      }
+
+      &-circle {
+        position: absolute;
+        left: 50%;
+        top: 5px;
+        width: 45px;
+        height: 15px;
+        transform: scale(0);
+        opacity: 0;
+        background: #fff;
+        border-radius: 50%;
+        background: rgb(255, 255, 255);
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 1) 36%,
+          rgba(209, 245, 253, 0.4) 100%
+        );
+        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
+        animation: circleExpand 1.5s ease-in-out forwards;
+      }
+
+      &-blue {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 60px;
+        height: 25px;
+        border-radius: 50%;
+        transform-origin: left;
+        opacity: 0;
+        background: radial-gradient(
+          circle,
+          rgb(25, 94, 158) 10%,
+          rgba(26, 24, 119, 0.4) 100%
+        );
+        box-shadow: 0 0 20px 10px rgba(9, 46, 255, 0.4);
+        animation: lightExpandBlue 1.5s ease-in-out infinite;
+      }
+
+      &-blue-center {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 60px;
+        height: 35px;
+        border-radius: 50%;
+        transform-origin: center;
+        opacity: 0;
+        transform: scaleX(0) scaleY(0.2);
+        background: linear-gradient(
+          90deg,
+          rgb(76, 105, 207) 0%,
+          rgba(32, 96, 193, 0.5) 50%,
+          rgba(21, 45, 136, 0.5) 100%
+        );
+        box-shadow: 0 0 20px 10px rgba(9, 46, 255, 0.9);
+        animation: lightExpandBlueCenter 2s ease-in-out infinite;
+      }
+
+      &-01 {
+        left: 386px;
+        top: 627px;
+        .visual-beam-line {
+          animation-delay: 0.5s;
+        }
+        .visual-beam-circle {
+          animation-delay: 1s;
+        }
+      }
+
+      // e
+      &-02 {
+        left: 1290px;
+        top: 790px;
+
+        .visual-beam-line {
+          animation-delay: 0.5s;
+        }
+        .visual-beam-circle {
+          width: 35px;
+          height: 25px;
+          top: 2px;
+          animation-delay: 0.5s;
+        }
+      }
+
+      // o
+      &-03 {
+        left: 884px;
+        top: 790px;
+        z-index: 2;
+        .visual-beam-line {
+          animation-delay: 0.5s;
+        }
+        .visual-beam-circle {
+          animation-delay: 0.5s;
+        }
+      }
+
+      // blue beam
+      &-04 {
+        left: 410px;
+        top: 627px;
+        z-index: 4;
+        .visual-beam-blue {
+          animation-delay: 1s;
+        }
+      }
+
+      &-05 {
+        left: 885px;
+        top: 785px;
+        z-index: 0;
+        .visual-beam-blue-center {
+          animation-delay: 1.5s;
+        }
+      }
+
+      &-06 {
+        left: 1300px;
+        top: 785px;
+        z-index: 0;
+        .visual-beam-blue-center {
+          animation-delay: 1s;
+        }
+      }
+    }
+
+    @keyframes lightExpand {
+      0% {
+        transform: scaleX(0) scaleY(0);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scaleX(9) scaleY(0.3);
+        opacity: 1;
+      }
+    }
+
+    @keyframes lightExpandBlue {
+      0% {
+        transform: scaleX(0) scaleY(0.3);
+        opacity: 0;
+      }
+
+      50%,
+      70% {
+        transform: scaleX(4) scaleY(0.3);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scaleX(0) scaleY(0.3);
+        opacity: 0;
+      }
+    }
+
+    @keyframes lightExpandBlueCenter {
+      0% {
+        transform: scaleX(0) scaleY(0.2);
+        opacity: 0;
+      }
+
+      50%,
+      70% {
+        transform: scaleX(3) scaleY(0.2);
+        opacity: 0.7;
+      }
+
+      100% {
+        transform: scaleX(0) scaleY(0.2);
+        opacity: 0;
+      }
+    }
+
+    @keyframes circleExpand {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(0.7);
+        opacity: 1;
+      }
+    }
+  }
+
+  .promotion-section {
+    &::before {
+      content: "";
+      display: block;
+      height: 100px;
+      background-image: url(./images/olympic-rolling-text.png);
+      background-repeat: repeat-x;
+      background-position: 0 center;
+      background-size: auto 100%;
+      background-color: #000;
+      animation: textRolling 55s linear infinite;
+    }
+
+    .section-header {
+      width: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 138px;
+    }
+
+    &--olympic {
+      background: url(./images/olympic-section-01-bg.png) no-repeat top / 100%;
+      padding-bottom: 130px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 82px;
+        width: 371px;
+        height: 171px;
+        background: url(./images/northface-logo.png);
+      }
+
+      .section-content {
+        width: 1640px;
+        margin: 0 auto;
+        padding-top: 114px;
+      }
+
+      .section-item {
+        position: relative;
+
+        &__title {
+          text-align: center;
+          font-size: 26px;
+          line-height: 50px;
+        }
+
+        &__letter {
+          position: absolute;
+          .letter-motion {
+            position: relative;
+            img {
+              position: absolute;
+            }
+          }
+        }
+
+        &__grid {
+          position: relative;
+          overflow: hidden;
+          .grid-motion {
+            position: absolute;
+            display: grid;
+            .motion-item {
+              position: absolute;
+            }
+          }
+        }
+
+        &-01 {
+          .section-item__grid {
+            padding: 114px 0 160px;
+
+            .grid-motion {
+              left: 0;
+              top: 114px;
+              grid-template-columns: 666px 478px 496px;
+              grid-template-rows: 290px 509px;
+              grid-column-gap: 0px;
+              grid-row-gap: 0px;
+
+              &__01 {
+                display: grid;
+                grid-area: 1 / 1 / 2 / 2;
+                position: relative;
+                .motion-item {
+                  left: 0;
+                  bottom: 0;
+                  z-index: 10;
+                }
+              }
+              &__02 {
+                grid-area: 1 / 2 / 2 / 3;
+              }
+              &__03 {
+                grid-area: 1 / 3 / 2 / 4;
+              }
+              &__04 {
+                grid-area: 2 / 1 / 3 / 2;
+                position: relative;
+                overflow: hidden;
+                .motion-item-bg {
+                  z-index: 1;
+                }
+                .motion-item {
+                  top: 64px;
+                  z-index: 2;
+                }
+              }
+              &__05 {
+                grid-area: 2 / 2 / 3 / 4;
+                position: relative;
+                .motion-item {
+                  left: -27px;
+                  top: 33px;
+                }
+              }
+            }
+          }
+
+          .section-item__letter {
+            left: 1300px;
+            top: 648px;
+            width: 440px;
+            height: 208px;
+          }
+        }
+
+        &-02 {
+          .section-item__letter {
+            left: -75px;
+            top: 125px;
+            width: 591px;
+            height: 164px;
+          }
+        }
+
+        &-03 {
+          .section-item__grid {
+            padding-bottom: 135px;
+            .grid-motion {
+              left: 0;
+              top: 0;
+              grid-template-columns: 485px 470px 278px 403px;
+              grid-template-rows: 290px 509px;
+              grid-column-gap: 0px;
+              grid-row-gap: 0px;
+
+              &__01 {
+                grid-area: 1 / 1 / 2 / 2;
+              }
+              &__02 {
+                grid-area: 1 / 2 / 2 / 3;
+              }
+              &__03 {
+                grid-area: 1 / 3 / 2 / 4;
+              }
+              &__04 {
+                grid-area: 1 / 4 / 2 / 5;
+                .motion-item {
+                  width: 687px;
+                  right: -4px;
+                }
+              }
+              &__05 {
+                grid-area: 2 / 1 / 3 / 2;
+                .motion-item-bg {
+                  z-index: 10;
+                  left: 2px;
+                }
+              }
+              &__06 {
+                grid-area: 2 / 2 / 3 / 4;
+                .motion-item {
+                  bottom: -163px;
+                }
+              }
+              &__07 {
+                grid-area: 2 / 4 / 3 / 5;
+              }
+            }
+          }
+          .section-item__letter {
+            left: 530px;
+            top: 395px;
+            width: 445px;
+            height: 130px;
+          }
+        }
+
+        &:not(:first-child) {
+          .section-item__title {
+            padding-bottom: 115px;
+            padding-top: -23px;
+          }
+        }
+
+        &:first-child {
+          .section-item__title {
+            margin-top: 0;
+          }
+        }
+
+        &:last-child {
+          .section-item__title {
+            padding-top: 140px;
+          }
+        }
+      }
+    }
+
+    &--live {
+      background: url(./images/olympic-section-02-bg.png) no-repeat top / 100%;
+      padding-bottom: 219px;
+
+      .section-content {
+        margin-top: 137px;
+      }
+
+      .section-item {
+        position: relative;
+
+        &:first-child {
+          width: 1156px;
+          margin: 0 auto;
+        }
+
+        &__video {
+          width: 480px;
+          height: 813px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 1;
+          border-radius: 40px;
+          overflow: hidden;
+          border: 1px solid #000;
+
+          .video-top {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+          }
+
+          video {
+            transform: scale(1.75);
+          }
+        }
+
+        &__tag {
+          position: absolute;
+          z-index: 2;
+          &-01 {
+            right: 0;
+            top: 80px;
+          }
+          &-02 {
+            left: 36px;
+            top: 390px;
+          }
+        }
+
+        &__icon {
+          position: absolute;
+          img {
+            animation: iconFloating 3s linear infinite;
+          }
+          &-01 {
+            left: 173px;
+            top: 80px;
+          }
+          &-02 {
+            right: 160px;
+            top: 346px;
+            z-index: 3;
+            animation-duration: 3s;
+            img {
+              animation-duration: 2s;
+            }
+          }
+          &-03 {
+            left: 0;
+            top: 587px;
+            img {
+              animation-name: iconFloatingMild;
+              animation-duration: 2.5s;
+            }
+          }
+        }
+
+        &__button {
+          display: block;
+          width: 420px;
+          margin: 30px auto 0;
+        }
+
+        &__coupons {
+          width: 1078px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          margin-top: 58px;
+          border: 1px solid #000;
+
+          .coupon-item {
+            box-sizing: border-box;
+            height: 440px;
+            padding: 54px 50px 50px;
+            text-align: center;
+            position: relative;
+            background: url(./images/olympic-coupon-bg.png);
+            &:not(:first-child) {
+              border-left: 1px solid #000;
+            }
+          }
+        }
+
+        &:not(:first-child) {
+          margin-top: 140px;
+        }
+      }
+    }
+
+    &--event {
+      background: url(./images/olympic-section-03-bg.png) no-repeat top / 100%;
+      padding-bottom: 123px;
+      .section-content {
+        margin-top: 134px;
+      }
+
+      .section-item {
+        width: 1100px;
+        margin: 0 auto;
+
+        &__image {
+          position: relative;
+          margin: 80px auto 0;
+        }
+
+        &__icon {
+          position: absolute;
+          img {
+            animation: iconFloating 3s linear infinite;
+          }
+          &-01 {
+            left: 317px;
+            top: -60px;
+            img {
+              animation-name: iconFloatingMild;
+              animation-delay: 0.2s;
+            }
+          }
+          &-02 {
+            left: -32px;
+            top: 113px;
+          }
+          &-03 {
+            width: 368px;
+            height: 507px;
+            top: 265px;
+            left: 874px;
+            img {
+              animation-duration: 2s;
+            }
+          }
+        }
+
+        &__button {
+          display: block;
+          margin: 0 auto;
+          width: 420px;
+        }
+      }
+    }
+
+    &--swiper {
+      background: url(./images/olympic-section-04-bg.png) no-repeat top / 100%;
+      position: relative;
+
+      .swiper-container {
+        overflow: hidden;
+        padding: 253px 0 330px;
+        position: relative;
+      }
+
+      .swiper-slide {
+        width: 380px;
+        transition: all 0.4s ease-out;
+        transform: scale(0.95);
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          opacity: 1;
+          transition: opacity 0.5s ease;
+        }
+
+        &__text {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          opacity: 0;
+          transition: opacity 0.3s ease-out;
+        }
+      }
+
+      .swiper-slide-next + .swiper-slide {
+        transform: scale(1.42);
+        z-index: 10;
+        margin-right: 90px;
+        margin-left: 90px;
+
+        &::after {
+          opacity: 0;
+        }
+
+        .swiper-slide__text {
+          opacity: 1;
+        }
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        top: 395px;
+        margin-top: 0;
+        width: 150px;
+        height: 150px;
+        display: block;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      .swiper-button-prev {
+        left: 82px; // 140- (150-34/2)
+        background: url(./images/olympic-swiper-button-previous.png) no-repeat
+          center center / 34px 54px;
+      }
+
+      .swiper-button-next {
+        right: 82px;
+        background: url(./images/olympic-swiper-button-next.png) no-repeat
+          center center / 34px 54px;
+      }
+    }
+
+    @keyframes iconFloatingMild {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(15px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes iconFloating {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(25px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes textRolling {
+      0% {
+        background-position: 0;
+      }
+      100% {
+        background-position: 400%;
+      }
+    }
+  }
+}
+
+.promotion-list-link {
+  padding-top: 0;
+}

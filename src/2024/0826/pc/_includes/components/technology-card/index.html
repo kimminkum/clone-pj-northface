@@ -1,0 +1,27 @@
+{% for card in cards %}
+<div class="card card--{{ forloop.index }}">
+  {% if card.topic %}
+  <p class="card__topic">{{ card.topic }}</p>
+  <div class="card__inner">
+    <div class="card__image">
+      <img src="../../assets/images/technology/{{ card.imagePath }}" alt="" />
+    </div>
+    {% if card.title %}
+    <div class="card__content">
+      <p class="card__title">{{ card.title }}</p>
+      <p class="card__description">{{ card.description }}</p>
+    </div>
+    {% endif %}
+  </div>
+  {% else %}
+  <div class="card__image">
+    <img src="../../assets/images/technology/{{ card.imagePath }}" alt="" />
+  </div>
+  {% if card.title %}
+  <div class="card__content">
+    <p class="card__title">{{ card.title }}</p>
+    <p class="card__description">{{ card.description }}</p>
+  </div>
+  {% endif %} {% endif %}
+</div>
+{% endfor %}

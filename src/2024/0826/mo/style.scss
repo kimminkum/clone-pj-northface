@@ -1,0 +1,33 @@
+@use "util" as * with (
+  $min-width: 320,
+  $max-width: 750
+);
+
+@import "./_includes/partials/gnb/style.scss";
+
+main {
+  min-height: 200vh;
+}
+
+.page-main {
+  overflow: hidden;
+  .swiper-main {
+    position: relative;
+    .swiper-pagination {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.4);
+      height: var(--swiper-pagination-progressbar-size, 3px);
+
+      .swiper-pagination-progressbar-fill {
+        background-color: #d72e42;
+        opacity: 1;
+        height: 3px;
+      }
+    }
+  }
+}
+.overflow-hidden {
+  overflow: hidden;
+}

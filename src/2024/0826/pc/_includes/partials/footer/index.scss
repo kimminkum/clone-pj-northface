@@ -1,0 +1,85 @@
+@use "util" as *;
+
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+}
+
+.page-promotion + .footer {
+  min-width:1680px;
+}
+
+.footer-fix {
+  position: fixed;
+  max-width: 1920px;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: fv(20);
+  opacity: 1;
+  z-index: 100;
+  transition:
+    opacity 0.4s linear,
+    z-index 0.4s linear;
+
+  &.is-fix {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 40px;
+  }
+
+  .button {
+    width: 52px;
+    height: 52px;
+    opacity: 0;
+    z-index: 0;
+    transition:
+      opacity 0.4s linear,
+      z-index 0.4s linear;
+
+    margin-right: percent(120, 1920);
+
+    &--quick {
+      background-color: #dddddd;
+    }
+
+    &.is-active {
+      cursor: pointer;
+      opacity: 1;
+      z-index: 100;
+    }
+  }
+
+  .icon {
+    display: inline-flex;
+    width: 52px;
+    height: 52px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("../../assets/images/common/footer_top_btn.png");
+    }
+  }
+}
+
+.footer__inner {
+  display: block;
+  .img-box {
+    img {
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@use "util" as *;
+
+.size-info {
+  position: relative;
+  width: 87.55%;
+  margin-inline: auto;
+
+  &--header {
+    .header-title {
+      padding-bottom: 60px;
+      font-family: Pretendard;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 46px;
+      letter-spacing: -0.64px;
+      text-transform: uppercase;
+    }
+
+    .header-body {
+      position: relative;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #eaeaea;
+      .find-size {
+        position: absolute;
+        right: 0;
+        top: fv(24);
+        width: fv(120);
+        height: fv(38);
+      }
+    }
+  }
+}

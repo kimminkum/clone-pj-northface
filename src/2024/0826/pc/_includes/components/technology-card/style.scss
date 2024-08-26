@@ -1,0 +1,32 @@
+@use "util" as *;
+
+.card {
+  text-align: left;
+}
+
+.card__title {
+  font-size: fv(30);
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+
+  margin-top: fv(30);
+}
+
+.card__description {
+  font-size: fv(18);
+  font-weight: 400;
+  line-height: 155.556%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+
+  margin-top: fv(20);
+}
+
+.card__topic {
+  font-size: fv(140);
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+}

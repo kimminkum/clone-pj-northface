@@ -1,0 +1,31 @@
+---
+layout: "default"
+css:
+  - "../../assets/styles/common.scss"
+  - "./modal.scss"
+js:
+  - "../../assets/js/common.js"
+  - "./modal.js"
+---
+
+{% assign indexsrc = "../../" %} {% include
+'../../_includes/partials/header/index.html' %}
+
+<main class="container page-main">
+  <button type="button" data-show-modal="modal1">Open Modal</button>
+
+  <dialog class="modal" id="modal1">
+    <div class="modal__box">
+      <button type="button" class="modal__close-button" data-close>
+        <svg fill="none" viewBox="0 0 22 22">
+          <title>Close Modal</title>
+          <path d="M21 1 1 21M1 1l20 20" />
+        </svg>
+      </button>
+      <h2 class="modal__title">모달 레이어 제목</h2>
+      <p>Modal Content</p>
+    </div>
+  </dialog>
+</main>
+
+{% include '../../_includes/partials/footer/index.html' %}

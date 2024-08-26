@@ -1,0 +1,79 @@
+@use "util" as *;
+$content: 1920;
+
+.section__body {
+  padding-left: percent(120, $content);
+}
+
+.second-curation {
+  display: flex;
+  gap: 10px;
+
+  margin-bottom: 140px;
+
+  overflow: hidden;
+
+  li {
+    width: 412px;
+    flex: 0 0 auto;
+  }
+}
+
+.second-curation__text {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 380px;
+  overflow: hidden;
+
+  span {
+    color: #000;
+    font-size: 110px;
+    font-weight: 700;
+    line-height: 109.091%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 80px;
+    white-space: nowrap;
+    will-change: transform;
+    animation: flow 20s linear infinite;
+  }
+}
+
+.marquee-wrap {
+  position: relative;
+  display: flex;
+  width: percent(4536, 1920);
+  margin-bottom: 180px;
+  padding-top: 80px;
+  align-items: center;
+
+  .marquee__item {
+    > img {
+      width: percent(2117, 1920);
+    }
+    animation: marquee 10s infinite linear;
+  }
+}
+
+@keyframes flow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

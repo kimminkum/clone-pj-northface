@@ -1,0 +1,72 @@
+---
+layout: "default"
+css:
+  - "./assets/styles/common.scss"
+  - "./style.scss"
+js:
+  - "./assets/js/common.js"
+  - "./script.js"
+---
+
+{% assign indexsrc = "./" %} {% include
+'./_includes/partials/header/index.html', transparent: true %}
+
+<main class="container page-main">
+  <!-- S : banner -->
+  {% include "./_includes/partials/main/banner/index.html" %}
+  <!-- E : banner -->
+
+  <!-- S : contents -->
+  {% include "./_includes/partials/main/content/index.html" %}
+  <!-- E : contents -->
+
+  <!-- S : new-product -->
+  {% include "./_includes/partials/main/new-product/index.html" %}
+  <!-- E : new-product -->
+
+  <!-- S : collection -->
+  {% include "./_includes/partials/main/collection/index.html" %}
+  <!-- E  : collection -->
+
+  <!-- S : look-book -->
+  {% include "./_includes/partials/main/look-book/index.html" %}
+  <!-- E  : look-book -->
+
+  <!-- S : promotion -->
+  {% include "./_includes/partials/main/promotion/index.html" %}
+  <!-- E  : promotion -->
+
+  <!-- S : curation -->
+  {% include "./_includes/partials/main/curation/index.html" %}
+  <!-- E  : curation -->
+
+  <!-- S : best -->
+  {% include "./_includes/partials/main/best/index.html" %}
+  <!-- E  : best -->
+
+  <!-- S : second-curation -->
+  {% include "./_includes/partials/main/second-curation/index.html" %}
+  <!-- E  : second-curation -->
+
+  <!-- S : pictorial -->
+  {% include "./_includes/partials/main/pictorial/index.html" %}
+  <!-- E  : pictorial -->
+
+  <!-- S : sns -->
+  {% include "./_includes/partials/main/sns/index.html" %}
+  <!-- E  : sns -->
+
+  <!-- S : edition -->
+  {% include "./_includes/partials/main/edition/index.html" %}
+  <!-- E  : edition -->
+
+  <!-- S : benefit -->
+  {% include "./_includes/partials/main/benefit/index.html" %}
+  <!-- E  : benefit -->
+
+  <!-- S : technology -->
+  {% include "./_includes/partials/main/technology/index.html" %}
+  <!-- E  : technology -->
+</main>
+
+{% include './_includes/partials/footer/index.html' %}

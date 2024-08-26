@@ -1,0 +1,79 @@
+@use "util" as *;
+$content: 1920;
+
+.inner {
+  position: relative;
+  margin-inline: auto;
+  overflow: hidden;
+  padding: 0 percent(120, $content);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.video-wrap {
+  padding: 120px 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  }
+}
+
+.nofe-image {
+  width: 417px;
+
+  margin-inline: auto;
+
+  position: relative;
+  z-index: 2;
+}
+
+.technology-button {
+  display: block;
+  position: absolute;
+  width: 116px;
+  height: 48px;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.video-box {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 0;
+
+  > video {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.hidden-link {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}

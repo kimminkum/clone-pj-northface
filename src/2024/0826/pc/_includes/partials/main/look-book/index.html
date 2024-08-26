@@ -1,0 +1,26 @@
+<section class="section section--look-book">
+  {% include "../../../../_includes/components/main-title/index.html"
+  title01:"세희님이 좋아할 만한", title02:"테크웨어 코디 추천", desc:'다시
+  추천받기' %}
+  <div class="section__body">
+    <ul
+      class="look-book"
+      data-aos="fade-up"
+      data-aos-delay="400"
+      data-aos-duration="1000"
+    >
+      {% for i in (1..4) %}
+      <li>
+        <span class="look-book__like"></span>
+
+        <div class="nofe-image nofe-image--top">
+          <img src="./assets/images/main/look_book_top_{{i}}.png" alt="" />
+        </div>
+        <div class="nofe-image nofe-image--bottom">
+          <img src="./assets/images/main/look_book_bottom_{{i}}.png" alt="" />
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

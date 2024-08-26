@@ -1,0 +1,49 @@
+<footer class="footer">
+  <span class="shadow"> </span>
+  <div class="footer__button-wrap">
+    <button type="button" class="footer__button footer__button--top">
+      <i class="footer__icon">
+        <span class="a11y-hidden">Go to top</span>
+        <img src="{{imgPath}}btn_top.png" alt="" />
+      </i>
+    </button>
+  </div>
+  {% if page_type == 'pdp' %}
+  <div class="footer__bottom-bar footer__bottom-bar--pdp">
+    <div class="dark-bar">
+      <div class="image-box">
+        <img src="{{imgPath}}heart_icon.png" alt="" />
+      </div>
+      <div class="footer__bottom-bar-item">
+        <span>장바구니 담기</span>
+      </div>
+      <div class="footer__bottom-bar-item">
+        <span>바로 구매하기</span>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="footer__bottom-bar">
+    <div class="footer__bottom-bar--link">
+      <a href="{{pageHome}}" class="home-btn"
+        ><span class="a11y-hidden">홈</span>
+      </a>
+      <button type="button" class="gnb-btn">
+        <span class="a11y-hidden">카테고리</span>
+      </button>
+    </div>
+    <div class="bottom-bar-wrap">
+      <img src="{{imgPath}}bottom_bar_01.png" alt="" />
+      <img src="{{imgPath}}bottom_bar_02.png" alt="" />
+      <img src="{{imgPath}}bottom_bar_03.png" alt="" />
+      <img src="{{imgPath}}bottom_bar_04.png" alt="" />
+      <img src="{{imgPath}}bottom_bar_05.png" alt="" />
+    </div>
+  </div>
+  {% endif %}
+  <div class="footer__inner">
+    <div class="footer__img-box">
+      <img src="{{imgPath}}footer.jpg" alt="푸터이미지" class="footer__img" />
+    </div>
+  </div>
+</footer>

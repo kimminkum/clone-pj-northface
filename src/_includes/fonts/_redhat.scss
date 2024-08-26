@@ -1,0 +1,16 @@
+$font-path: "https://review.cttd.co.kr/assets/fonts/red-hat-display" !default;
+
+@font-face {
+  font-family: "Red Hat Display";
+  font-weight: 300 900;
+  src: url("#{$font-path}/RedHatDisplay-VariableFont_wght.woff2")
+    format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Red Hat Display";
+  font-style: italic;
+  font-weight: 300 900;
+  src: url("#{$font-path}/RedHatDisplay-Italic-VariableFont_wght.woff2")
+    format("woff2-variations");
+}

@@ -1,0 +1,31 @@
+@use "util" as *;
+
+.layout-header__inner {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) -12.79%,
+    rgba(0, 0, 0, 0) 88.37%
+  );
+}
+
+.page-subpage--lookbook {
+  // --layout-header-height: 0;
+
+  position: relative;
+  max-width: 1920px;
+  margin-inline: auto;
+
+  // &.layout-header + main {
+  //   padding-top: 0;
+  // }
+  &.page-subpage--lookbook-list {
+    padding-bottom: 70px;
+  }
+
+  @import "./css/list.scss";
+  @import "./css/detail.scss";
+}
+
+.layout-header + .page-subpage--lookbook-detail {
+  padding-top: 0;
+}

@@ -1,0 +1,49 @@
+.promotion-header {
+  position: relative;
+  width: 1920px;
+  padding: 40px 60px;
+  margin-inline: auto;
+}
+
+.promotion-title {
+  color: #000;
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.promotion-date {
+  margin-top: 8px;
+  color: #999;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: normal;
+}
+
+.promotion-share {
+  position: absolute;
+  top: 50%;
+  right: 66px;
+  width: 24px;
+  height: 24px;
+  transform: translateY(-50%);
+}
+
+.promotion-list-link {
+  display: flex;
+  justify-content: center;
+  padding-block: 80px 150px;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    height: 60px;
+    border: 1px solid #000;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+  }
+}

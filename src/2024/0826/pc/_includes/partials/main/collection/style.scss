@@ -1,0 +1,285 @@
+@use "util" as *;
+$content: 1920;
+
+.inner {
+  display: flex;
+  padding: 0;
+
+  & > div {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .section__header {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    & > * {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.contents--left {
+  display: flex;
+  padding-left: percent(120, $content);
+  position: relative;
+
+  .contents__image {
+    width: fv(760);
+  }
+
+  .contents__text {
+    // position: relative;
+    // width: fv(627);
+    // margin-top: fv(136);
+    // left: fv(-148);
+
+    position: absolute;
+    width: fv(627);
+    top: 0;
+    left: 100%;
+    margin-top: fv(136);
+    margin-left: fv(-148);
+  }
+}
+
+.contents--right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+
+  .contents__image--top {
+    width: fv(180);
+    margin-top: fv(130);
+
+    position: relative;
+  }
+
+  .circle {
+    animation: rotate-center 8s linear infinite forwards;
+  }
+
+  .circle-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: fv(90);
+  }
+
+  .contents__image--bottom {
+    position: relative;
+    left: fv(2);
+    width: fv(452);
+  }
+
+  .contents__text {
+    position: relative;
+    margin-top: fv(136);
+    left: fv(-148);
+  }
+}
+
+.section__body {
+  display: flex;
+  .contents:nth-child(1),
+  .contents:nth-child(2) {
+    flex: 0 0 auto;
+    width: fv(1920);
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nofe-img--topic {
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.contents--01 {
+  padding-left: fv(102);
+  padding-right: fv(306);
+
+  .nofe-img--product01 {
+    display: flex;
+    align-items: center;
+
+    .img01 {
+      width: fv(324);
+      margin-top: fv(60);
+    }
+
+    .img02 {
+      width: fv(286);
+      position: relative;
+      right: fv(25);
+    }
+  }
+
+  .area--right {
+    display: flex;
+    height: 100vh;
+    position: relative;
+  }
+
+  .nofe-img--topic {
+    width: fv(394);
+
+    bottom: 0;
+    left: 0;
+    margin-bottom: fv(103);
+    margin-left: fv(-267);
+  }
+
+  .nofe-img--product02 {
+    display: flex;
+    align-items: flex-end;
+    height: fit-content;
+
+    .img01 {
+      width: fv(560);
+      margin-top: fv(110);
+      position: relative;
+      left: fv(66);
+    }
+
+    .img02 {
+      width: fv(280);
+      position: relative;
+      top: fv(98);
+    }
+  }
+}
+
+.contents--02 {
+  padding-right: fv(468);
+
+  .nofe-img--product01 {
+    display: flex;
+    height: 100%;
+    align-items: end;
+    .img01 {
+      width: fv(620);
+      margin-bottom: fv(80);
+      position: relative;
+      right: fv(21);
+    }
+  }
+
+  .area--right {
+    display: flex;
+    position: relative;
+  }
+
+  .nofe-img--topic {
+    width: fv(676);
+
+    top: 50%;
+    right: 100%;
+    margin-top: -50%;
+    margin-right: fv(-86);
+  }
+
+  .nofe-img--product02 {
+    display: flex;
+    align-items: flex-start;
+
+    position: relative;
+
+    .img01 {
+      width: fv(280);
+      position: absolute;
+      bottom: 0;
+      left: fv(-140);
+      margin-bottom: fv(80);
+    }
+
+    .img02 {
+      width: fv(449);
+      position: relative;
+      margin-top: fv(46);
+    }
+  }
+}
+
+.contents--03 {
+  width: auto;
+  padding-left: fv(37);
+  padding-right: fv(400);
+  align-items: center;
+  display: flex;
+
+  .inner {
+    position: relative;
+    bottom: 2.8%;
+  }
+
+  .nofe-img--topic {
+    width: fv(972);
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: fv(-60);
+    margin-right: fv(43);
+  }
+
+  .nofe-img--product {
+    width: fv(720);
+  }
+
+  .nofe-img--circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: fv(228);
+    margin-top: fv(-80);
+    margin-right: fv(-107);
+
+    animation: rotate-center 8s linear infinite forwards;
+  }
+}
+
+.contents--04 {
+  // padding-left: 1000px;
+
+  position: relative;
+
+  .nofe-video {
+    width: fv(1000);
+    height: 100%;
+    video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+      object-fit: cover;
+    }
+  }
+
+  .nofe-img {
+    position: absolute;
+    width: 374px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

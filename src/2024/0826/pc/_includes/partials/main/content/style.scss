@@ -1,0 +1,245 @@
+@use "util" as *;
+@import "./carousel";
+
+$content: 1920;
+
+.section__desc {
+  color: #999;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  .text-underline {
+    font-family: Pretendard;
+    color: #444;
+    text-decoration-line: underline;
+    text-underline-offset: 0.15em;
+    bottom: 0;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/images/common/info_icon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+.section__body {
+  max-width: 1920px;
+  width: 100%;
+  overflow: hidden;
+
+  padding-left: percent(120, $content);
+
+  & > .inner {
+    display: flex;
+  }
+}
+
+$content: 1800;
+.keyword-tab {
+  width: 378px;
+  flex: 0 0 auto;
+
+  .tab-button {
+    --tab-color: #eaeaea;
+    color: var(--tab-color);
+    display: block;
+
+    cursor: pointer;
+
+    width: fit-content;
+    padding: 18px 22px;
+
+    box-sizing: border-box;
+    border: 2px solid var(--tab-color);
+
+    transition: all 0.3s ease-in;
+
+    .tab-button__text {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 100%;
+      color: #c5c5c5;
+    }
+
+    &.is-active {
+      --tab-color: #000;
+      border-radius: 0px 22px 0px 0px;
+
+      .tab-button__text {
+        color: var(--tab-color);
+      }
+    }
+  }
+
+  .tab-button + .tab-button {
+    margin-top: 16px;
+  }
+}
+
+$scale3d: scale3d(0.6307, 0.6307, 0.6307) translateY(-152px) translateX(-153px);
+.keyword {
+  display: none;
+  height: 658px;
+  flex: 0 0 auto;
+  width: 1640px;
+
+  position: relative;
+
+  &.is-active {
+    display: block;
+  }
+
+  .keyword__caption {
+    width: 328px;
+    margin-top: 20px;
+  }
+
+  @import "./carousel";
+
+  // &.swipe-left {
+  //   .swiper-slide {
+  //     .keyword__image {
+  //       justify-content: flex-end;
+  //     }
+  //   }
+
+  //   .swiper-slide-prev.animation-in {
+  //     .keyword__image {
+  //       animation: scale-full 0.5s linear forwards;
+  //     }
+  //   }
+  // }
+
+  // &.swipe-right {
+  //   .swiper-slide {
+  //     .keyword__image {
+  //       justify-content: flex-start;
+  //     }
+  //   }
+  //   .swiper-slide-next.animation-in {
+  //     .keyword__image {
+  //       animation: scale-full 0.5s linear forwards;
+  //     }
+  //   }
+  // }
+
+  // img {
+  //   width: auto;
+  // }
+
+  // .swiper-wrapper {
+  //   // left: -656px;
+  // }
+
+  // .swiper-slide {
+  //   width: auto;
+  //   height: auto;
+  //   flex: 0 0 auto;
+
+  //   .inner {
+  //     width: 328px;
+  //     position: relative;
+  //     height: inherit;
+  //     right: 10px;
+  //   }
+
+  //   .keyword__image {
+  //     position: relative;
+  //     display: flex;
+  //   }
+
+  //   .scale-wrap {
+  //   }
+
+  //   .keyword__caption {
+  //     position: relative;
+  //     margin-top: 20px;
+  //     // position: absolute;
+  //     // top: 100%;
+
+  //     img {
+  //       position: absolute;
+  //       right: 0;
+  //       width: 328px;
+  //     }
+  //   }
+  // }
+
+  // .swiper-slide-active {
+  //   .inner {
+  //     width: 520px;
+  //     right: 0;
+  //   }
+
+  //   .keyword__image {
+  //     width: 520px;
+  //   }
+
+  //   .scale-wrap {
+  //     animation: scale-full 0.5s linear forwards;
+  //     animation-direction: reverse;
+  //   }
+
+  //   .keyword__caption {
+  //     animation: scale-width 0.5s linear forwards;
+  //   }
+
+  // .keyword__hover {
+  //   opacity: 1;
+  //   visibility: inherit;
+
+  //   transform: translateY(0);
+  // }
+  // }
+  .keyword__image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .keyword__hover {
+    position: absolute;
+    bottom: 0;
+    width: 520px;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(105%);
+    transition: transform 1s ease;
+
+    animation: none;
+  }
+}
+
+.inner.aos-animate {
+  .carousel-slide.is-active .keyword__hover {
+    animation: slideIn 0.8s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(105%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

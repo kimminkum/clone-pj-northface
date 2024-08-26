@@ -1,0 +1,101 @@
+@mixin section-title-icon($width, $height, $image-path, $transform: null) {
+  &::before {
+    content: "";
+    display: block;
+    width: fv($width);
+    height: fv($height);
+    background-image: url("../../assets/images/technology/" + $image-path);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 100%;
+    bottom: 100%;
+    @if $transform {
+      transform: $transform;
+    }
+  }
+}
+
+.section__header {
+  height: 100vh;
+}
+
+.header__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
+.section__title {
+  position: relative;
+  font-size: fv(220);
+  line-height: 100%;
+
+  span {
+    font-weight: 700;
+    text-transform: uppercase;
+
+    // &:first-child {
+    //   position: relative;
+    //   @include section-title-icon(
+    //     234,
+    //     222,
+    //     "section01_title_icon.png",
+    //     translate(fv(-75), fv(118))
+    //   );
+    // }
+  }
+}
+
+.section__desc {
+  font-size: fv(24);
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+
+  margin-top: percent(60, 1920);
+}
+
+.section__title--l {
+  span {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.icon {
+  width: fv(310);
+  height: fv(262);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.section-ecology {
+  .icon {
+    top: fv(-122);
+    right: fv(-197);
+  }
+}
+
+.section--heat-line {
+  .icon {
+    top: fv(-109);
+    right: fv(-139);
+  }
+}
+
+.section--goose-down {
+  .icon {
+    top: fv(-38);
+    right: fv(335);
+  }
+}

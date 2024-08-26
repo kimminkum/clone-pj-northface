@@ -1,0 +1,133 @@
+#top-layer {
+  position: relative;
+  z-index: 1000;
+}
+
+.layer {
+  display: none;
+  position: fixed;
+  overflow: clip;
+
+  &.is-active {
+    display: var(--layer-display, flex);
+  }
+
+  &.is-open {
+    --layer-box-opacity: 1;
+    --layer-backdrop-opacity: 1;
+  }
+}
+
+.layer--modal {
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    transition: opacity var(--layer-transition-duraion, 0.3s) linear;
+    opacity: var(--layer-backdrop-opacity, 0);
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.layer__box {
+  position: relative;
+  transition:
+    opacity 0.3s linear,
+    transform 0.3s ease-out;
+  opacity: var(--layer-box-opacity, 0);
+  transform: var(--layer-box-transform, var(--layer-box-transform-from));
+  display: grid;
+  grid-template:
+    "header" auto
+    "body" minmax(0, 1fr) / minmax(0, 1fr);
+  max-width: 100%;
+  max-height: 100%;
+  background: #fff;
+  color: #000;
+}
+
+.layer__header {
+  grid-area: header;
+  min-height: var(--layer-header-min-height);
+  padding-top: var(
+    --layer-header-pad-top,
+    var(--layer-pad-top, var(--layer-pad-y))
+  );
+  padding-bottom: var(--layer-header-pad-bottom);
+  padding-inline: var(--layer-header-pad-x, var(--layer-pad-x));
+}
+
+.layer__body {
+  grid-area: body;
+  overflow: auto;
+  padding-inline: var(--layer-body-pad-x, var(--layer-pad-x));
+  padding-bottom: var(
+    --layer-body-pad-bottom,
+    var(--layer-body-pad-y, var(--layer-pad-bottom, var(--layer-pad-y)))
+  );
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.layer__close-button {
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+  }
+
+  path {
+    fill: none;
+    stroke: currentColor;
+  }
+}
+
+.layer__title {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1;
+  font-family: Pretendard, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* 상품 비고하기 */
+.comparison-layer {
+  --layer-pad-top: 40px;
+  --layer-pad-bottom: 60px;
+  --layer-pad-x: 60px;
+}
+
+/* 장바구니 */
+.cart-layer {
+  --layer-box-opacity: 1;
+  --layer-header-min-height: 60px;
+  --layer-box-transform-from: translate3d(100%, 0, 0);
+
+  justify-content: flex-end;
+
+  &.is-open {
+    --layer-box-transform: translate3d(0, 0, 0);
+  }
+
+  .layer__box {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+  }
+}

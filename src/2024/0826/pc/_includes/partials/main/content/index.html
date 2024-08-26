@@ -1,0 +1,71 @@
+<section class="section section--contents">
+  {% include "../../../../_includes/components/main-title/index.html"
+  title01:"세희님이 좋아할 만한", title02:"쇼핑 키워드", desc:'<span
+    >비슷한 연령의 <span class="text-underline">20-30대 여성</span>이 많이
+    검색한 키워드입니다</span
+  >' %}
+  <div class="section__body">
+    <div
+      class="inner"
+      data-aos="fade-left"
+      data-aos-delay="400"
+      data-aos-duration="1000"
+    >
+      <div class="keyword-tab">
+        {% for item in data.contentTab %}
+        <button
+          role="tab"
+          class="tab-button {% if forloop.first %}is-active{% endif %} {% if forloop.index > 2 %}disabled{% endif %}"
+          data-tab="tab{{forloop.index}}"
+        >
+          <span class="tab-button__text">{{item.text}}</span>
+        </button>
+        {% endfor %}
+      </div>
+      {% for i in (1..2) %}
+      <div
+        class="keyword {% if forloop.first %}is-active{% endif %} keyword--{{i}} swiper"
+        id="tab{{i}}"
+      >
+        <div class="carousel-container">
+          <div class="carousel" id="carousel">
+            {% for e in (1..5) %}
+            <div class="carousel-slide">
+              <div class="inner">
+                <div class="keyword__image">
+                  <div class="scale-wrap">
+                    <img
+                      src="./assets/images/main/keyword{{i}}_img0{{e}}.jpg"
+                      alt=""
+                    />
+                  </div>
+                  {% if forloop.first %}
+                  <div
+                    class="keyword__hover"
+                    data-aos="fade-up"
+                    data-aos-delay="800"
+                    data-aos-duration="1000"
+                  >
+                    <img src="./assets/images/main/keyword_hover.png" alt="" />
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="keyword__caption">
+                  <img
+                    src="./assets/images/main/keyword_list{{i}}_txt0{{e}}.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" id="carouselProgress"></div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

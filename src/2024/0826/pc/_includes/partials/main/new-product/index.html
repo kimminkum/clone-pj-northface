@@ -1,0 +1,25 @@
+<section class="section section--new-product">
+  {% include "../../../../_includes/components/main-title/index.html"
+  title01:"늘 새로운", title02:"노스페이스 신제품", desc:'<span
+    class="text-underline"
+    >더보기</span
+  >' %}
+  <div class="section__body">
+    <div class="inner">
+      <ul
+        class="new-product"
+        data-aos="fade-left"
+        data-aos-delay="400"
+        data-aos-duration="1000"
+      >
+        {% for i in (1..6) %}
+        <li>
+          <div>
+            <img src="./assets/images/main/product_{{i}}.png" alt="" />
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+@use "util" as *;
+
+$content: 1920;
+
+.section__body {
+  max-width: 1920px;
+  width: 100%;
+  overflow: hidden;
+
+  padding-left: percent(120, $content);
+}
+
+$content: 1800;
+.new-product {
+  display: flex;
+  gap: 10px;
+
+  li {
+    width: 328px;
+    flex: 0 0 auto;
+  }
+}

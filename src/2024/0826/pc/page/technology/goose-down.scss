@@ -1,0 +1,189 @@
+@use "util" as *;
+$content: 1920;
+
+@mixin section-title-icon($width, $height, $image-path, $transform: null) {
+  &::before {
+    content: "";
+    display: block;
+    width: fv($width);
+    height: fv($height);
+    background-image: url("../../assets/images/technology/" + $image-path);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 100%;
+    bottom: 100%;
+    @if $transform {
+      transform: $transform;
+    }
+  }
+}
+
+/* rds goose down */
+.section--goose-down {
+  // span:first-child {
+  //   @include section-title-icon(
+  //     298,
+  //     262,
+  //     "goose_down_title_icon.png",
+  //     translate(fv(-75), 48%)
+  //   );
+  //   &::before {
+  //     bottom: 50%;
+  //   }
+  // }
+
+  .card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+
+    &:not(:last-child) {
+      margin-right: percent(300, $content);
+    }
+
+    &--1 {
+      $card-width: 1210;
+      width: percent($card-width, $content);
+
+      box-sizing: content-box;
+      padding-left: percent(300, $content);
+
+      .card__topic {
+        margin-top: percent(200, $card-width);
+      }
+
+      .card__image {
+        width: percent(560, $card-width);
+        margin-right: percent(140, $card-width);
+      }
+    }
+
+    &--2 {
+      $card-width: 1422;
+      width: percent($card-width, $content);
+      flex-direction: column-reverse;
+      justify-content: center;
+
+      transform: translateY(percent(-80, $content));
+
+      .card__inner {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+
+      .card__image {
+        width: percent(600, $card-width);
+      }
+
+      .card__topic {
+        position: absolute;
+        bottom: fv(160);
+        z-index: 2;
+        // transform: translateY(fv(-160));
+      }
+    }
+
+    &--3 {
+      $card-width: 1541;
+      width: percent($card-width, $content);
+      justify-content: flex-end;
+
+      transform: translateY(percent(-30, $content));
+
+      box-sizing: content-box;
+      padding-right: percent(300, $content);
+
+      margin-bottom: percent(100, $content);
+
+      .card__inner {
+        position: relative;
+        &::after {
+          content: "";
+          display: block;
+          width: percent(600, $card-width);
+          height: 0;
+          padding-top: percent(450, $card-width);
+          background-image: url("../../assets/images/technology/goose_down_03_01.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+
+          position: absolute;
+          top: -70%;
+          right: 0;
+        }
+      }
+
+      .card__image {
+        width: percent(315, $card-width);
+        margin-right: percent(140, $card-width);
+      }
+
+      .card__topic {
+        position: absolute;
+        top: fv(159);
+        left: fv(251);
+        // transform: translate(fv(198), fv(267));
+
+        z-index: 1;
+      }
+
+      .card__inner {
+        .card__content {
+          margin-top: fv(54);
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .card__inner {
+    display: flex;
+
+    & > div {
+      flex: 0 0 auto;
+    }
+  }
+
+  .card__title {
+    margin-top: 0;
+  }
+
+  .card__description {
+    color: #777;
+  }
+}
+
+/* slogan */
+.section--slogan {
+  .section__header {
+    background-image: url("../../assets/images/technology/slogan_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .section__title {
+    font-size: fv(64);
+    line-height: 140.625%;
+    span {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    span:first-child {
+      &::before {
+        content: none;
+      }
+    }
+  }
+}

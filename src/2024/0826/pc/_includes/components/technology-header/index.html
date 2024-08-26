@@ -1,0 +1,15 @@
+<div class="section__header">
+  <div class="header__inner">
+    <p class="section__title section__title--l">
+      <span>{{title01}}</span>{% if title02 %}<br /><span>{{title02}}</span>{%
+      endif %} {% if icon %}
+      <video class="icon" autoplay loop muted playsinline preload="auto">
+        <source src="{{icon}}" type="video/mp4" />
+      </video>
+      {% endif %}
+    </p>
+    {% if desc %}
+    <p class="section__desc">{{desc}}</p>
+    {% endif %}
+  </div>
+</div>

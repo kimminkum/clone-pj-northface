@@ -1,0 +1,229 @@
+@use "util" as *;
+
+$content: 1920;
+// page
+@import "../../_includes/partials/pdp/pdp-top/style";
+@import "../../_includes/partials/pdp/pdp-size/style";
+@import "../../assets/styles/layer";
+
+@import "../../_includes/components/stickyTab/style";
+
+.page-subpage--pdp {
+  position: relative;
+  max-width: 1920px;
+  margin-inline: auto;
+
+  .section + .section {
+    padding-top: 150px;
+  }
+
+  button {
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .full-image {
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .floating-quick {
+    position: fixed;
+    right: 0;
+    top: 168px;
+    z-index: 100;
+
+    .quick-btn {
+      width: 100px;
+      height: 54px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: #000;
+      color: #fff;
+
+      transform: translateX(100%);
+      transition: transform 0.6s linear;
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+
+    .quick-layer {
+      position: absolute;
+      visibility: visible;
+      top: -10px;
+      right: 0;
+      width: 415px;
+
+      transform: translateX(100%);
+      transition: transform 0.3s linear;
+
+      &.active {
+        transform: translateX(0);
+      }
+
+      &--inner {
+        .close-btn {
+          position: absolute;
+          left: 0;
+          top: 10px;
+          z-index: 2;
+          width: 55px;
+          height: 55px;
+        }
+      }
+    }
+  }
+
+  .section--prd-info {
+    margin-top: 2px;
+  }
+
+  .layer {
+    z-index: 3;
+    .layer__header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+
+  #codi {
+    .codi-close {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  #size {
+    .layer__box {
+      position: relative;
+      width: 820px;
+    }
+
+    .size-close {
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      top: 30px;
+      right: 30px;
+    }
+
+    .size-body {
+      position: absolute;
+      top: 224px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 742px;
+
+      .size-tab.hidden,
+      .size-contents.hidden {
+        display: none;
+      }
+
+      .size-tab {
+        width: 742px;
+        height: 54px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: 30px;
+
+        &__item {
+          text-align: center;
+          width: 50%;
+          height: 100%;
+          border: 1px solid #dedede;
+
+          font-family: "Pretendard", sans-serif;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 24px;
+          color: #7a7a7a;
+          display: flex;
+
+          &.selected {
+            border: 1px solid #000;
+            color: #000;
+          }
+        }
+
+        &__link {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          line-height: 52px;
+        }
+      }
+
+      .size-contents {
+        position: relative;
+
+        &--layer {
+          position: absolute;
+          left: 0;
+          top: 0;
+
+          opacity: 0;
+          transition: all 0.3s linear;
+
+          &.selected {
+            opacity: 1;
+          }
+        }
+
+        #sizeB {
+          .select-btn {
+            width: 148px;
+            height: 48px;
+            position: absolute;
+            right: 0;
+            z-index: 2;
+
+            &__01 {
+              top: 100px;
+            }
+            &__02 {
+              top: 230px;
+            }
+            &__03 {
+              top: 360px;
+            }
+          }
+        }
+      }
+
+      .option-layer {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+
+        .other-prd {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+          width: 240px;
+          height: 50px;
+        }
+
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+}

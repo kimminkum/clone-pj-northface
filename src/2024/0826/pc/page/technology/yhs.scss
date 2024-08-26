@@ -1,0 +1,143 @@
+@use "util" as *;
+
+.floating-section {
+  position: relative;
+  .section_flag {
+    position: absolute;
+    top: fv(5);
+    left: 0;
+    width: 200px;
+    height: 1px;
+    background-color: red;
+  }
+  .lnb-menu {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+
+    // transform: translateY(0);
+
+    .lnb-inner {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      display: flex;
+      padding: fv(8);
+      gap: fv(8);
+      transform: translateX(-50%);
+      z-index: 101;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+
+      // position: fixed;
+
+      &.is-fixed {
+        position: fixed;
+        top: 0;
+        z-index: 101;
+        opacity: 1;
+      }
+
+      &.is-end {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        margin-bottom: percent(40, 1920);
+        z-index: 50;
+        opacity: 1;
+      }
+
+      // width: 0;
+      // visibility: hidden;
+      // opacity: 0;
+
+      cursor: pointer;
+      background-color: #333;
+      border-radius: 50px;
+
+      transition:
+        opacity 0.5s ease-in,
+        width 0.5s ease-in;
+
+      .lnb__text {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: -0.36px;
+        text-transform: uppercase;
+      }
+
+      li {
+        position: relative;
+        opacity: 0.4;
+
+        > a {
+          display: block;
+          position: relative;
+          padding: fv(10) fv(16);
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50px;
+          background-color: #444;
+          opacity: 0;
+        }
+
+        &.is-active {
+          opacity: 1;
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &.is-absolute {
+      position: absolute;
+    }
+  }
+}
+.page-subpage--technology {
+  .section__title--l {
+    font-size: fv(220);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .card__title {
+    font-size: fv(30);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .card__description {
+    font-size: fv(18);
+    font-weight: 400;
+    line-height: calc(28 / 18);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .section--01 {
+    .section-ecology__body {
+      .section__title--l {
+        font-size: fv(140);
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

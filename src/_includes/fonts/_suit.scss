@@ -1,0 +1,7 @@
+$font-path: "https://review.cttd.co.kr/assets/fonts/suit" !default;
+
+@font-face {
+  font-family: "SUIT";
+  font-weight: 100 900;
+  src: url("#{$font-path}/SUIT-Variable.woff2") format("woff2-variations");
+}

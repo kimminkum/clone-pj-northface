@@ -1,0 +1,13 @@
+@use "util" as * with (
+  $min-width: 320,
+  $max-width: 750
+);
+
+@import "../../_includes/partials/gnb/style.scss";
+
+:root {
+  --icon-arrow: url("../../assets/images/common/icon_arrow.png");
+  --icon-close: url("../../assets/images/common/icon_close.png");
+  --gnb-back: url("../../assets/images/common/icon_back.png");
+  --icon-cart: url("../../assets/images/common/icon_02.png");
+}

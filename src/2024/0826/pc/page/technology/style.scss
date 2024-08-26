@@ -1,0 +1,594 @@
+@use "util" as *;
+
+$content: 1920;
+
+@import "./page.scss";
+
+.page-subpage--technology {
+  overflow: hidden;
+
+  text-align: center;
+  color: #fff;
+  background-color: #000000;
+  /* components */
+  @import "../../_includes/components/technology-header/style";
+  @import "../../_includes/components/technology-card/style";
+
+  .section {
+    background-color: #000000;
+  }
+
+  .scroll-contents__item {
+    width: 100%;
+    height: 100%;
+  }
+
+  .section__title--l,
+  .content__title {
+    font-size: fv(140);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: uppercase;
+
+    .sub-title {
+      font-size: fv(24);
+      font-weight: 700;
+      line-height: 100%;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+
+      display: block;
+      margin-bottom: percent(20, $content);
+    }
+  }
+
+  .content__desc {
+    font-size: fv(23);
+    font-weight: 400;
+    line-height: 104.348%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    opacity: 0.7;
+
+    margin-top: percent(40, $content);
+  }
+
+  /* horizontal-scrolling */
+  .horizontal-scrolling {
+    height: 100vh;
+
+    .horizontal-scrolling__inner {
+      display: flex;
+
+      & > div {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+    }
+
+    .card-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .card {
+      flex: 0 0 auto;
+    }
+  }
+
+  /* heat-line */
+  .section--heat-line {
+    // span:first-child {
+    //   // @include section-title-icon(
+    //   //   310,
+    //   //   192,
+    //   //   "heat_line_title_icon.png",
+    //   //   translate(fv(-171), fv(117))
+    //   // );
+    // }
+
+    .card {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      &:not(:last-child) {
+        margin-right: percent(140, $content);
+      }
+
+      &--1 {
+        justify-content: flex-end;
+        width: percent(360, $content);
+        margin-bottom: percent(100, $content);
+
+        box-sizing: content-box;
+        padding-left: percent(180, $content);
+      }
+      &--2 {
+        width: percent(640, $content);
+        margin-top: percent(200, $content);
+      }
+      &--3 {
+        justify-content: flex-end;
+        width: percent(300, $content);
+        margin-bottom: percent(98, $content);
+      }
+      &--4 {
+        width: percent(500, $content);
+        position: relative;
+
+        // &::before {
+        //   content: "";
+        //   display: block;
+        //   width: percent(440, 500);
+        //   height: 0;
+        //   padding-top: percent(220, 500);
+        //   background-image: url("../../assets/images/technology/heat_line_04_01.jpg");
+        //   background-position: center;
+        //   background-size: cover;
+        //   background-repeat: no-repeat;
+        //   position: absolute;
+        //   right: 0;
+        //   top: 100%;
+        //   transform: translate(percent(289, 440), percent(-220, 220));
+        //   opacity: 0;
+        // }
+
+        &.is-ani {
+          &::before {
+            opacity: 1;
+            animation: heat-line-down-up 1s;
+          }
+        }
+      }
+      &--5 {
+        width: percent(740, $content);
+        margin-top: percent(314, $content);
+
+        position: relative;
+
+        &::before {
+          content: "";
+          display: block;
+          width: percent(400, 740);
+          height: 0;
+          padding-top: percent(300, 740);
+          background-image: url("../../assets/images/technology/heat_line_05_01.jpg");
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          position: absolute;
+          right: 0;
+          top: 0;
+          transform: translate(percent(190, 400), percent(-214, 300));
+          z-index: 1;
+          // opacity: 0;
+        }
+
+        // &.is-ani {
+        //   &::before {
+        //     opacity: 1;
+        //     animation: heat-line-down-up 1s;
+        //   }
+        // }
+      }
+      &--6 {
+        justify-content: flex-end;
+        width: percent(330, $content);
+        margin-bottom: percent(100, $content);
+
+        box-sizing: content-box;
+        padding-right: percent(300, $content);
+      }
+    }
+
+    .card__description {
+      color: #777;
+    }
+  }
+
+  /*intro*/
+  .section-intro {
+    position: relative;
+    padding-top: percent(324, 1920);
+    .section-header {
+      position: relative;
+      overflow: hidden;
+    }
+    .section__title--big {
+      font-weight: 700;
+      font-size: fv(260);
+      color: #fff;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform 0.6s ease-in-out;
+      transition-delay: 1.2s;
+    }
+    .hero-box {
+      overflow: hidden;
+      position: relative;
+      clip-path: inset(0 0 100% 0);
+      transition: clip-path 0.6s ease-in-out;
+    }
+    .hero-box__inner {
+      overflow: hidden;
+      clip-path: inset(0 33% 0 33%);
+      transition: clip-path 0.6s ease-in-out;
+      transition-delay: 0.6s;
+    }
+    .video-wrap {
+      overflow: hidden;
+      width: 100%;
+      clip-path: inset(0 percent(40, 1920) 0 percent(40, 1920));
+    }
+    .video-box {
+      transform: translateY(percent(312, 1920)) scale(1.3);
+      transition: transform 0.6s ease-in-out;
+      transition-delay: 1.2s;
+
+      > video {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &.is-active {
+      .hero-box {
+        clip-path: inset(0 0 0 0);
+      }
+      .hero-box__inner {
+        clip-path: inset(0 0 0 0);
+      }
+      .section__title--big {
+        transform: translateY(0);
+      }
+      .video-wrap {
+        > .video-box {
+          transform: translateY(0) scale(1.3);
+        }
+      }
+    }
+  }
+  /*ecology*/
+  .section--01 {
+    overflow: hidden;
+    .section__body {
+      position: relative;
+    }
+    .section__bg-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+    }
+    .section__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: 0;
+      background-repeat: no-repeat;
+      will-change: opacity, transform;
+      &01 {
+        background-image: url(../../assets/images/technology/ecology-01.jpg);
+      }
+      &02 {
+        background-image: url(../../assets/images/technology/ecology-02.jpg);
+      }
+      &03 {
+        background-image: url(../../assets/images/technology/ecology-03.jpg);
+      }
+    }
+    .content {
+      text-align: left;
+
+      .card__title {
+        margin-top: fv(30);
+      }
+    }
+    .content--01 {
+      padding: percent(300, 1920) 0;
+      max-width: percent(1560, 1920);
+      height: fv(1764);
+      margin: 0 auto;
+      .section__title--l {
+        text-align: left;
+      }
+      position: relative;
+      .card--01 {
+        width: percent(720, 1560);
+      }
+      .card--02 {
+        width: percent(540, 1560);
+        margin-bottom: percent(146, 1560);
+      }
+      .content__body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: percent(300, 1560);
+        margin-top: percent(-80, 1560);
+      }
+    }
+
+    .content--02 {
+      height: fv(2612);
+      padding: percent(300, 1920) 0;
+      .content__header {
+        margin-right: percent(180, 1920);
+      }
+      .section__title--l {
+        text-align: right;
+      }
+      .content__body {
+        margin-top: percent(-80, 1920);
+      }
+      .content__group {
+        position: relative;
+        max-width: percent(1600, 1920);
+        display: flex;
+        justify-content: center;
+
+        &--01 {
+          margin-left: percent(320, 1920);
+          align-items: flex-end;
+          gap: percent(340, 1600);
+        }
+        &--02 {
+          margin-right: percent(320, 1920);
+          padding-left: percent(700, 1920);
+          align-items: flex-start;
+          flex-direction: row-reverse;
+        }
+        + .content__group {
+          margin-top: percent(300, 1920);
+        }
+      }
+      .card--01 {
+        width: percent(540, 1600);
+        margin-bottom: percent(146, 1600);
+      }
+      .card--02 {
+        width: percent(720, 1600);
+      }
+      .card--03 {
+        width: percent(900, 900);
+      }
+      .card--04 {
+        position: absolute;
+        left: 0;
+        bottom: percent(-400, 548);
+        width: percent(385, 1600);
+      }
+    }
+    .content--03 {
+      height: fv(2476);
+      padding: percent(300, 1920) 0;
+      .content__header {
+        padding-top: percent(150, 1920);
+        margin-left: percent(180, 1920);
+      }
+      .content__body {
+        display: flex;
+        max-width: percent(1740, 1920);
+        margin-left: auto;
+        margin-top: percent(-124, 1920);
+        justify-content: space-between;
+        gap: percent(300, 1740);
+      }
+      .card__group {
+        width: percent(720, 1740);
+      }
+      .card--01 {
+        width: percent(720, 1740);
+        margin-top: percent(324, 1740);
+      }
+      .card--02 {
+        width: percent(480, 720);
+        margin-left: percent(240, 720);
+      }
+      .card--03 {
+        width: percent(540, 720);
+        margin-top: percent(380, 720);
+      }
+    }
+
+    .card__description {
+      opacity: 0.7;
+    }
+  }
+
+  // hyper
+  .section--hyper {
+    background-color: #000;
+    .scroll-contents--fake {
+      .scroll-contents__item {
+        visibility: hidden;
+
+        &::before {
+          display: none;
+        }
+
+        &.hide {
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .scroll-contents__item {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 5;
+        transition: background-color 0.2s linear;
+      }
+
+      &.hide {
+        &::before {
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .scroll-contents__bg {
+          img {
+            transition: all 0.5s linear;
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      .scroll-contents__bg {
+        width: 100%;
+        height: 100%;
+        transition: all linear 0.8s;
+        img {
+          width: 100%;
+          height: 100%;
+          transform: scale(1);
+          transition: all linear 0.3s;
+        }
+      }
+
+      .scroll-contents__txt {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: left;
+        color: #fff;
+        z-index: 2;
+
+        .scroll-contents {
+          &__sub {
+            font-family: "Pretendard", sans-serif;
+            font-size: fv(24);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%;
+            margin-bottom: 20px;
+          }
+
+          &__title {
+            font-family: "Red Hat Display";
+            font-size: fv(140);
+            font-style: normal;
+            font-weight: 600;
+            line-height: 100%;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+          }
+
+          &__description {
+            font-family: "Pretendard", sans-serif;
+            font-size: fv(24);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%;
+            letter-spacing: -0.46px;
+            text-transform: uppercase;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+
+    .scroll-contents {
+      .icon {
+        display: none;
+      }
+
+      &--01 {
+        .scroll-contents__txt {
+          text-align: center;
+          left: 50%;
+          transform: translate3d(-50%, -50%, 0);
+          opacity: 0;
+          z-index: 2;
+
+          .icon {
+            display: block;
+            right: fv(-160);
+            top: fv(-103);
+          }
+
+          // &::after {
+          //   content: "";
+          //   background-image: url("../../assets/images/technology/hyper_visual.png");
+          //   background-repeat: no-repeat;
+          //   background-size: cover;
+          //   background-position: center center;
+          //   width: fv(239);
+          //   height: fv(205);
+          //   position: absolute;
+          //   right: fv(-39);
+          //   top: fv(-106);
+          // }
+
+          .scroll-contents {
+            &__title {
+              font-size: fv(220);
+              font-weight: 700;
+              line-height: 100%;
+
+              margin-bottom: fv(60);
+            }
+          }
+        }
+        .scroll-contents__bg {
+          opacity: 0;
+        }
+      }
+
+      &--02 {
+        .scroll-contents__txt {
+          left: fv(1005);
+        }
+      }
+      &--03 {
+        .scroll-contents__txt {
+          left: percent(180, 1920);
+        }
+      }
+      &--04 {
+        .scroll-contents__txt {
+          text-align: center;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+  @import "./goose-down";
+}
+@keyframes heat-line-down-up {
+  0% {
+    clip-path: inset(80% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@import "./yhs.scss";

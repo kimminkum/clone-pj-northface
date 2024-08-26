@@ -1,0 +1,384 @@
+@use "util" as * with (
+  $min-width: 1680,
+  $max-width: 1920
+);
+
+.page-promotion {
+  width: 100%;
+  max-width: 1920px;
+  min-width: 1680px;
+  margin: 0 auto;
+  > div {
+    width: 100%;
+    max-width: 1920px;
+    min-width: 1680px;
+    margin: 0 auto;
+  }
+
+  // main
+  .c-main-container {
+    background: url("./images/northface_w_01.jpg") no-repeat 0 0 / cover;
+    position: relative;
+    overflow: hidden;
+
+    .window {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .swiper-main {
+      position: absolute;
+      left: max(fv(514), 450px);
+      right: max(fv(538), 472px);
+      top: max(fv(163), 137px);
+      bottom: fv(214);
+    }
+
+    .w_cover {
+      position: absolute;
+      z-index: 2;
+
+      &-01 {
+        left: fv(60);
+        top: fv(167);
+      }
+      &-02 {
+        top: fv(134);
+        right: fv(60);
+      }
+      &-03 {
+        left: fv(60);
+        top: fv(439);
+      }
+      &-04 {
+        right: fv(60);
+        top: fv(439);
+      }
+      &-05 {
+        bottom: fv(166);
+        left: fv(41);
+        z-index: 0;
+      }
+      &-06 {
+        right: fv(60);
+        bottom: fv(183);
+        z-index: 0;
+      }
+    }
+  }
+
+  // sticky
+  .sticky-tab {
+    --sticky-bg-color: #000;
+    --sticky-z-index: 90;
+    --sticky-top: var(
+      --header-height,
+      0
+    ); // header가 있을 경우 header height 기입
+    --sticky-height: 80px;
+
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: var(--sticky-width, 1300);
+    min-height: var(--sticky-height, 0);
+    z-index: var(--sticky-z-index, 10);
+
+    &.is-hidden .sticky-tab__container {
+      opacity: 0;
+    }
+
+    &.is-fixed .sticky-tab__container {
+      position: fixed;
+      top: 0;
+      // margin-top: var(--sticky-top, 0);
+      // margin-top: max(var(--layout-header-height), 0);
+      left: 0;
+      width: 100%;
+      transition: margin-top 0.25s linear;
+    }
+  }
+
+  .sticky-tab__container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: 1;
+    transition:
+      background 0.3s linear,
+      opacity 0.3s linear;
+    margin-top: var(--sticky-top, 0);
+    background-color: var(--sticky-bg-color, #fff);
+  }
+
+  .sticky-tab__list {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    align-items: center;
+    max-width: var(--sticky-list-width, 100%);
+    margin: 0 auto;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .sticky-tab__list li {
+    box-sizing: border-box;
+    min-width: fv(210);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+
+    &:nth-child(4) {
+      min-width: fv(260);
+    }
+    &:nth-child(5) {
+      min-width: fv(260);
+    }
+
+    &.is-active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background-color: #d1e72d;
+    }
+
+    &.is-active a {
+      img:first-child {
+        opacity: 0;
+      }
+      img:last-child {
+        opacity: 1;
+      }
+    }
+
+    a {
+      position: relative;
+      display: block;
+      white-space: nowrap;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 2.25;
+      color: #fff;
+      text-decoration: none;
+
+      img:first-child {
+        opacity: 1;
+        transition: opacity 0.1s linear;
+      }
+
+      img:last-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.1s linear;
+      }
+    }
+  }
+
+  // content
+  .content__header-00 {
+    padding-top: fv(170);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    top: 0;
+
+    div:first-child {
+      margin-bottom: fv(33);
+    }
+
+    div:nth-child(2) {
+      margin-bottom: fv(30);
+    }
+  }
+
+  .content__header {
+    padding-top: fv(150);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+
+    div:first-child {
+      margin-bottom: fv(33);
+    }
+
+    div:nth-child(2) {
+      margin-bottom: fv(30);
+    }
+
+    div:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 1920px;
+    min-width: 1680px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  // benefit
+  .benefit-container {
+    position: relative;
+
+    .benefit__body {
+      margin-top: fv(80);
+      .benefit__coupon {
+        display: flex;
+        gap: fv(26);
+        justify-content: center;
+        margin: 0 auto;
+      }
+
+      .benefit__btn {
+        display: flex;
+        justify-content: center;
+        margin: fv(60) auto 0;
+        width: fv(400);
+      }
+    }
+  }
+
+  .full-img {
+    width: 100%;
+    display: block;
+  }
+
+  .daily-container {
+    position: relative;
+    overflow: hidden;
+
+    .daily__body {
+      margin-top: fv(80);
+      .swiper-01 {
+        margin: 0 fv(300);
+      }
+    }
+  }
+
+  .percent-container {
+    position: relative;
+
+    .percent__tab {
+      margin-top: fv(80);
+
+      &-list {
+        display: flex;
+        justify-content: center;
+        gap: fv(20);
+        margin: 0 auto fv(60);
+
+        li {
+          position: relative;
+          cursor: pointer;
+
+          img:last-child {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.2s linear;
+          }
+
+          &:hover {
+            img:last-child {
+              opacity: 0.1;
+            }
+          }
+        }
+
+        li.is-active {
+          img:last-child {
+            opacity: 1;
+          }
+        }
+      }
+
+      &-box {
+        margin: 0 fv(250);
+        li {
+          display: none;
+        }
+        li.is-active {
+          display: flex;
+          justify-content: center;
+          gap: fv(35);
+        }
+      }
+
+      .percent__btn {
+        display: flex;
+        justify-content: center;
+        margin: fv(60) auto 0;
+        width: fv(400);
+      }
+    }
+
+    .percent__body {
+      margin: fv(80) max(fv(360), 300px) 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: fv(20);
+    }
+  }
+
+  .special-container {
+    height: auto;
+    background: url("./images/northface_w_06_n.jpg") no-repeat 0 0 / cover;
+    position: relative;
+
+    .special__body {
+      display: flex;
+      justify-content: center;
+      margin: fv(80) auto 0;
+      gap: fv(40);
+    }
+  }
+
+  // swiper
+
+  .swiper-container {
+    overflow: hidden;
+  }
+
+  .swiper-01 .swiper-slide {
+    transform: scale(0.9);
+    transition: transform 0.8s ease; // 크기 변경 시 애니메이션 효과
+  }
+
+  .swiper-01 .swiper-slide.slide-active {
+    transform: scale(1); // 활성화된 슬라이드 크기
+  }
+}
+
+.layout-header:not(.is-scrolled)
+  + .container
+  .sticky-tab.is-fixed
+  .sticky-tab__container {
+  --sticky-top: var(--header-height, 88px);
+  // transform: translateY(var(--header-height, 88px));
+}

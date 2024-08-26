@@ -1,0 +1,20 @@
+@use "util" as *;
+$content: 1920;
+
+.section__body {
+  margin-inline: auto;
+  padding: 144px 0;
+
+  background: url("./assets/images/main/edition_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nofe-image {
+  width: 688px;
+
+  margin-inline: auto;
+
+  position: relative;
+}

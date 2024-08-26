@@ -1,0 +1,64 @@
+---
+layout: default
+tags: "gate"
+favicon: "./favicon.ico"
+manifest: "./site.webmanifest"
+---
+
+<style>
+  @custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+  :root {
+    --gutter: 20px;
+  }
+
+  body {
+    padding: 0 var(--gutter, 0);
+    margin: 0;
+  }
+
+  a {
+    color: var(--color-primary, currentColor);
+  }
+
+  :--heading {
+    text-transform: uppercase;
+  }
+</style>
+
+<div class="page">
+  <div class="container">
+    <h1 class="title">
+      <img
+        src="./images/logo_project.png"
+        alt="{{ site.name }}"
+        width="174"
+        height="37"
+        class="logo_project"
+      />
+      Renewal<br />
+      Proposal
+    </h1>
+    <ul class="type-link-list">
+      <li>
+        <a href="./pc/" class="type-link">
+          <b>pc</b>
+        </a>
+      </li>
+      <li>
+        <a href="./mo/" class="type-link">
+          <b>mo</b>
+        </a>
+      </li>
+    </ul>
+    <p class="cttd">
+      <img
+        src="./images/logo_cttd.png"
+        alt="CTTD"
+        width="140"
+        height="27"
+        class="logo_cttd"
+      />
+    </p>
+  </div>
+</div>

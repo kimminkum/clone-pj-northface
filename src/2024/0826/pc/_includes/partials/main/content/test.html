@@ -1,0 +1,27 @@
+<!-- carousel.html -->
+<section class="section section--contents">
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      {% for e in (1..5) %}
+      <div class="carousel-slide">
+        <div class="inner">
+          <div class="keyword__image">
+            <div class="scale-wrap">
+              <img src="./assets/images/main/keyword1_img0{{e}}.jpg" alt="" />
+            </div>
+            <!-- <div class="keyword__hover">
+                  <img src="./assets/images/main/keyword_hover.png" alt="" />
+                </div> -->
+          </div>
+          <div class="keyword__caption">
+            <img src="./assets/images/main/keyword1_txt0{{e}}.png" alt="" />
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="carouselProgress"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+@use "util" as *;
+$content: 1920;
+
+.inner {
+  max-width: 1920px;
+  margin-inline: auto;
+  padding: 219px 0;
+}
+
+.nofe-image {
+  width: 523px;
+
+  margin-inline: auto;
+
+  position: relative;
+}
+
+.promotion-button {
+  display: block;
+  position: absolute;
+  width: 164px;
+  height: 48px;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -1,0 +1,104 @@
+@use "util" as *;
+
+$content: 1920;
+
+.section__desc {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/images/main/reload_icon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+.section__body {
+  max-width: 1920px;
+  width: 100%;
+
+  padding: 0 percent(120, $content);
+}
+
+.look-book {
+  display: flex;
+  gap: 10px;
+
+  li {
+    width: 25%;
+    position: relative;
+
+    &:hover {
+      .nofe-image--top img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .nofe-image--top {
+    overflow: hidden;
+
+    position: relative;
+
+    img {
+      transform: scale(1);
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  .nofe-image--bottom {
+    margin-top: 28px;
+  }
+}
+
+.look-book__like {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(16px, 16px);
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  &::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url("./assets/images/main/look_book_hart_icon.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &::after {
+    content: "27";
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+  }
+}
+
+li:nth-child(2) {
+  .look-book__like::after {
+    content: "41";
+  }
+}
+li:nth-child(3) {
+  .look-book__like::after {
+    content: "39";
+  }
+}
+li:nth-child(4) {
+  .look-book__like::after {
+    content: "21";
+  }
+}

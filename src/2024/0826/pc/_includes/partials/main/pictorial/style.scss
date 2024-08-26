@@ -1,0 +1,34 @@
+@use "util" as *;
+$content: 1920;
+
+.section__body {
+  display: flex;
+  & > * {
+    width: 50%;
+    flex: 0 0 auto;
+  }
+}
+
+.nofe-image--text {
+  position: absolute;
+  width: fv(427);
+  bottom: 0;
+  left: 0;
+  margin-bottom: 80px;
+  margin-left: 60px;
+}
+
+$content: 960;
+
+.contetns--right {
+  position: relative;
+
+  // .nofe-image {
+  //   position: absolute;
+  //   padding: fv(155) fv(162);
+  //   width: 100%;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  // }
+}

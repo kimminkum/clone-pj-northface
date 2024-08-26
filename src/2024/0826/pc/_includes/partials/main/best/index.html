@@ -1,0 +1,49 @@
+<section class="section section--full-width section--has-bg section--best">
+  <div class="inner">
+    {% include "../../../../_includes/components/main-title/index.html"
+    title01:"노스페이스 베스트 상품" %}
+    <div class="section__body">
+      <div
+        class="nofe-image nofe-image--tab"
+        data-aos="fade-up"
+        data-aos-delay="400"
+        data-aos-duration="1000"
+      >
+        <img src="./assets/images/main/best_tab.png" alt="" />
+      </div>
+      <div
+        class="best swiper"
+        data-aos="fade-left"
+        data-aos-delay="600"
+        data-aos-duration="1000"
+      >
+        <div class="swiper-wrapper">
+          {% for item in data.bestItem %}
+          <div class="swiper-slide swiper-slide--{{forloop.index}}">
+            {% if item.video01 %}
+            <div class="nofe-video">
+              <video
+                src="./assets/images/main/{{item.video01}}"
+                autoplay
+                muted
+                playsinline
+                loop
+              ></video>
+            </div>
+            {% endif %} {% if item.src01 %}
+            <div class="nofe-image">
+              <img src="./assets/images/main/{{item.src01}}" alt="" />
+            </div>
+            {% endif %} {% if item.src02 %}
+            <div class="nofe-image">
+              <img src="./assets/images/main/{{item.src02}}" alt="" />
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>

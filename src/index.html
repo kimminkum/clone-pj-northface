@@ -1,0 +1,18 @@
+---
+title: "INDEX"
+layout: "default"
+---
+
+<h1>{{ site.name }}</h1>
+
+{%- if collections.gate -%}
+<h2>Gate pages</h2>
+
+<ul>
+  {%- for item in collections.gate -%}
+  <li>
+    <a href="{{ item.url }}">{{ item.review.data }} 시안</a>
+  </li>
+  {%- endfor -%}
+</ul>
+{%- endif -%}

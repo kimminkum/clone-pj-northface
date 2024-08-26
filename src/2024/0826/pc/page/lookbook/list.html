@@ -1,0 +1,135 @@
+---
+layout: "default"
+css:
+  - "https://unpkg.com/swiper/swiper-bundle.min.css"
+  - "../../assets/styles/common.scss"
+  - "./style.scss"
+js:
+  - "https://unpkg.com/swiper/swiper-bundle.min.js"
+  - "../../assets/js/common.js"
+  - "./js/list.js"
+---
+
+{% assign indexsrc = "../../" %} {% include
+'../../_includes/partials/header/index.html' %}
+<main
+  class="container page-subpage page-subpage--lookbook page-subpage--lookbook-list"
+>
+  <ul class="lookbook-list">
+    <li class="lookbook-list__item">
+      <div class="lookbook-list__title">
+        <div class="image-box">
+          <img
+            src="../../assets/images/lookbook/lookbook_list_title01.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="lookbook-list__content">
+        <div class="lookbook-list__swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="./detail.html">
+                <div class="image-box">
+                  <img
+                    src="../../assets/images/lookbook/lookbook_list_content_wrap01.jpg"
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="./detail.html">
+                <div class="image-box">
+                  <img
+                    src="../../assets/images/lookbook/lookbook_list_content_wrap01.jpg"
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="lookbook-list__item lookbook-list__item--scroll lookbook-list__item--scroll--01"
+    >
+      <div class="lookbook-list__title">
+        <div class="image-box">
+          <img
+            src="../../assets/images/lookbook/lookbook_list_title02.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="lookbook-list__content">
+        <div class="lookbook-list__swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="./detail.html">
+                <div class="image-box">
+                  <img
+                    src="../../assets/images/lookbook/lookbook_list_content_wrap02.jpg"
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="./detail.html">
+                <div class="image-box">
+                  <img
+                    src="../../assets/images/lookbook/lookbook_list_content_wrap02.jpg"
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="lookbook-list__item lookbook-list__item--scroll lookbook-list__item--scroll--02"
+    >
+      <div class="lookbook-list__line"></div>
+      <div class="lookbook-list__title">
+        <div class="image-box">
+          <img
+            src="../../assets/images/lookbook/lookbook_list_title03.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="lookbook-list__content">
+        <div class="lookbook-list__swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="./detail.html">
+                <div class="image-box">
+                  <img
+                    src="../../assets/images/lookbook/lookbook_list_content_wrap03.jpg"
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="./detail.html">
+                <div class="image-box">
+                  <img
+                    src="../../assets/images/lookbook/lookbook_list_content_wrap03.jpg"
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-list__content-cover"></div>
+      </div>
+    </li>
+  </ul>
+</main>
+{% include '../../_includes/partials/footer/index.html' %}

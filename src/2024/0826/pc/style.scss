@@ -1,0 +1,201 @@
+@use "util" as *;
+$content: 1920;
+
+.layout-header__inner {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) -12.79%,
+    rgba(0, 0, 0, 0) 88.37%
+  );
+}
+
+.page-main {
+  --layout-header-height: 0;
+
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+
+  .section--full-width {
+    & > .inner {
+      max-width: 1920px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .section--has-bg {
+    background-color: #000;
+    color: #fff;
+
+    .section__header {
+      margin-top: 0;
+      padding-top: 150px;
+
+      .section__desc .text-underline {
+        color: #fff;
+
+        &::before {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  .section__header--type01 {
+    max-width: 1920px;
+    width: 100%;
+    overflow: hidden;
+
+    margin-top: 150px;
+    margin-bottom: 50px;
+    padding: 0 percent(120, $content);
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+    }
+
+    .section__title {
+      font-size: 48px;
+      line-height: 129.167%;
+      text-transform: uppercase;
+
+      & > span {
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+    }
+
+    .section__desc {
+      text-align: right;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 100%;
+      letter-spacing: -0.02em;
+
+      .text-underline {
+        color: #000;
+        position: relative;
+
+        text-decoration-line: underline;
+        bottom: 0.6em;
+        text-underline-offset: 0.6em;
+        text-decoration-thickness: 1.5px;
+
+        // bottom: 9.5px;
+        // padding-bottom: 8px;
+
+        // &::before {
+        //   content: "";
+        //   display: block;
+        //   width: 100%;
+        //   height: 1.5px;
+        //   position: absolute;
+        //   bottom: 0;
+        //   left: 0;
+        //   background-color: #000;
+        // }
+      }
+    }
+  }
+
+  /* banner */
+  .section--banner {
+    @import "./_includes/partials/main/banner/style";
+  }
+
+  /* content */
+  .section--contents {
+    @import "./_includes/partials/main/content/style";
+  }
+
+  /* new-product */
+  .section--new-product {
+    @import "./_includes/partials/main/new-product/style";
+  }
+
+  /* collection */
+  .section--collection {
+    margin-top: 150px;
+    height: 100vh;
+    background: url("./assets/images/main/collection_bg.jpg");
+    background-size: auto cover;
+    overflow: hidden;
+
+    @import "./_includes/partials/main/collection/style";
+  }
+
+  /* look-book */
+  .section--look-book {
+    @import "./_includes/partials/main/look-book/style";
+  }
+
+  /* promotion */
+  .section--promotion {
+    margin-top: 150px;
+    background: url("./assets/images/main/promotion_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @import "./_includes/partials/main/promotion/style";
+  }
+
+  /* best */
+  .section--best {
+    @import "./_includes/partials/main/best/style";
+  }
+
+  /* second-curation */
+  .section--second-curation {
+    background: linear-gradient(180deg, #000 61.48%, rgba(0, 0, 0, 0) 97.96%),
+      #fff;
+    & > .inner {
+      padding-right: 0;
+
+      .section__header {
+        padding-right: percent(120, $content);
+      }
+    }
+    @import "./_includes/partials/main/second-curation/style";
+  }
+
+  /* curation */
+  .section--curation {
+    .section__body {
+      padding: 0 percent(120, $content);
+    }
+  }
+
+  /* pictorial */
+  .section--pictorial {
+    @import "./_includes/partials/main/pictorial/style";
+  }
+
+  /* sns */
+  .section--sns {
+    @import "./_includes/partials/main/sns/style";
+  }
+
+  /* edition */
+  .section--edition {
+    @import "./_includes/partials/main/edition/style";
+  }
+
+  /* benefit */
+  .section--benefit {
+    @import "./_includes/partials/main/benefit/style";
+  }
+
+  /* technology */
+  .section--technology {
+    margin: 150px 0;
+    max-width: 1920px;
+    width: 100%;
+
+    margin-inline: auto;
+
+    @import "./_includes/partials/main/technology/style";
+  }
+}

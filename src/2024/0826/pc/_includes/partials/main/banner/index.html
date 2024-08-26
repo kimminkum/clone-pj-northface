@@ -1,0 +1,81 @@
+<section class="section section--full-width section--banner">
+  <div class="banner swiper">
+    <div class="swiper-wrapper">
+      {% for item in data.banner %}
+      <div class="banner__slide banner__slide--{{forloop.index}} swiper-slide">
+        <a href="{{indexsrc}}{{item.link}}">
+          <!-- <div class="dim-cover"></div> -->
+          <div class="banner__image">
+            <img
+              src="./assets/images/main/banner_{{forloop.index}}.jpg"
+              alt=""
+            />
+          </div>
+          <div class="banner__caption">
+            <div class="inner">
+              <p class="banner__title">
+                {% if item.en %}
+                <span
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  data-aos-duration="1000"
+                  lang="en"
+                  >{{item.title01}}</span
+                ><br />
+                <span
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                  data-aos-duration="1000"
+                  lang="en"
+                  >{{item.title02}}</span
+                >{% else %}
+                <span
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  data-aos-duration="1000"
+                  >{{item.title01}}</span
+                ><br />
+                <span
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                  data-aos-duration="1000"
+                  >{{item.title02}}</span
+                >
+                {% endif %}
+              </p>
+              <p
+                class="banner__description"
+                data-aos="fade-up"
+                data-aos-delay="800"
+                data-aos-duration="1000"
+              >
+                {{item.description}}
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-control">
+      <div class="inner">
+        <div class="swiper-pagination-wrap">
+          <div class="swiper-pagination-text swiper-current"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-pagination-text swiper-total"></div>
+        </div>
+        <div class="swiper-button-wrap">
+          <div class="swiper-button swiper-button-prev">
+            {% include '../../../../assets/svg/swiper-arrow.svg' %}
+          </div>
+          <div class="swiper-button swiper-button-next">
+            {% include '../../../../assets/svg/swiper-arrow.svg' %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="custom-progress-bar">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+</section>
